@@ -1,0 +1,28 @@
+translation: "Common English Bible"
+abbreviation: CEB
+tradition: "Protestant (ecumenical)"
+year: "2010–2011"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son so that everyone who believes in him won't perish but will have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Biblia Hebraica Quinta"
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Göttingen Septuagint"
+    - "Rahlfs–Hanhart Septuagint"
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: medium
+  syntax_for_syntax: medium
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Mediating translation produced by an alliance of mainline Protestant publishers with inclusive language"
+historical_context:
+  commission: "Common English Bible Committee (Abingdon, Chalice, Westminster John Knox, etc.)"
+  purpose: "Create a clear, contemporary translation suitable for reading aloud and inclusive of all readers"

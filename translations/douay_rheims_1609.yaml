@@ -1,0 +1,29 @@
+translation: "Douay–Rheims Bible"
+abbreviation: "DRB"
+year: "1609–1610"
+tradition: "Catholic"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, as to give his only begotten Son; that whosoever believeth in him, may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate"
+  secondary:
+    - "Hebrew Masoretic Text"
+    - "Greek Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "Formal equivalence translation from the Latin Vulgate with occasional reference to Hebrew and Greek sources."
+derivation:
+  direct_sources:
+    - "Vulgate"
+  indirect_influences:
+    - "Geneva Bible"
+historical_context:
+  commission: "English College at Douai and later Rheims"
+  purpose: "To provide English‑speaking Catholics with an authorised translation during a period of Protestant dominance."
+  notes: "The New Testament was published in 1582 at Rheims; the Old Testament in 1609–1610 at Douai."

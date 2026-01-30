@@ -1,0 +1,27 @@
+translation: "The Living Bible"
+abbreviation: TLB
+tradition: Protestant
+year: "1971"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that He gave his only Son so that anyone who believes in him shall not perish but have eternal life."
+source_texts:
+  primary:
+    - "American Standard Version"
+  secondary:
+    - "King James Version"
+    - "Consultations with Greek texts"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Paraphrase of the ASV by Kenneth N. Taylor for readability"
+historical_context:
+  commission: "Tyndale House Publishers"
+  purpose: "Provide a devotional paraphrase that would help children understand Scripture"

@@ -1,0 +1,26 @@
+translation: "New English Bible"
+abbreviation: NEB
+tradition: Protestant
+year: "1961–1970"
+example_verse:
+  reference: "John 3:16"
+  text: "God loved the world so much that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica (Kittel)"
+    - "Tasker Greek New Testament"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Produced by British churches to provide a fresh translation using dynamic equivalence"
+historical_context:
+  commission: "Joint Committee of the Church of England and other British churches"
+  purpose: "Offer a modern idiomatic translation for common English readers"

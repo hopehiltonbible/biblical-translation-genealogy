@@ -1,0 +1,30 @@
+translation: "New American Standard Bible"
+abbreviation: "NASB"
+year: "1971"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that He gave His only begotten Son, that whoever believes in Him shall not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "UBS Greek New Testament"
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "A revision of the ASV aimed at maximum formal equivalence while improving English readability; often considered one of the most literal modern translations."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "King James Version"
+historical_context:
+  commission: "Lockman Foundation"
+  purpose: "To create a strictly literal translation reflecting the best Hebrew and Greek scholarship available."
+  notes: "Major updates released in 1977, 1995 and 2020."

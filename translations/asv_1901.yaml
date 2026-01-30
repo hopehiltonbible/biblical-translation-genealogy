@@ -1,0 +1,28 @@
+translation: "American Standard Version"
+abbreviation: ASV
+tradition: Protestant
+year: "1901"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Westcott and Hort Greek text"
+    - "Tregelles Greek text"
+    - "Masoretic Text"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "English Revised Version"
+  stylistic_influence: []
+  notes: "American adaptation of the English Revised Version; retains literalness but uses Americanisms"
+historical_context:
+  commission: "American committee of the ERV revisers"
+  purpose: "Provide an American form of the Revised Version and adopt more literal renderings"

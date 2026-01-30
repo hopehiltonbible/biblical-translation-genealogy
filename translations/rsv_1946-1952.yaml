@@ -1,0 +1,28 @@
+translation: "Revised Standard Version"
+abbreviation: RSV
+tradition: Protestant
+year: "1946–1952"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Dead Sea Scrolls"
+    - "Novum Testamentum Graece"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Revision intended to preserve the best of the KJV lineage while reflecting new manuscript discoveries"
+historical_context:
+  commission: "National Council of the Churches of Christ in the USA"
+  purpose: "Provide a clear, dignified translation combining the accuracy of ASV with improved readability"

@@ -1,0 +1,28 @@
+translation: "The Message"
+abbreviation: "MSG"
+year: "2002"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "This is how much God loved the world: He gave his Son, his one and only Son."
+source_texts:
+  primary:
+    - "Greek and Hebrew manuscripts"
+  secondary:
+    - "Various modern translations"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "low"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A contemporary paraphrase by Eugene H. Peterson that renders Scripture in colloquial English, emphasising the spirit of the text over literal wording."
+derivation:
+  direct_sources:
+    - "None (paraphrase)"
+  indirect_influences:
+    - "New Testament in Modern English"
+historical_context:
+  commission: "Authored by Eugene H. Peterson"
+  purpose: "To help modern readers hear the Bible in fresh, everyday language."
+  notes: "New Testament appeared in 1993; the complete Bible was published in 2002."

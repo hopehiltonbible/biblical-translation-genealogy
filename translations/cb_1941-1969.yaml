@@ -1,0 +1,27 @@
+translation: "Confraternity Bible"
+abbreviation: CB
+tradition: Catholic
+year: "1941–1969"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only‑begotten Son, that those who believe in him may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate"
+    - "Hebrew Masoretic Text"
+  secondary:
+    - "Greek manuscripts"
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "Douay–Rheims Bible"
+  stylistic_influence: []
+  notes: "Modern English revision of the Douay–Rheims produced by the Catholic Biblical Association"
+historical_context:
+  commission: "Catholic Biblical Association of America"
+  purpose: "Update the Douay translation into intelligible modern English and incorporate modern textual scholarship"

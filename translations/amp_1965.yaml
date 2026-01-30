@@ -1,0 +1,28 @@
+translation: "Amplified Bible"
+abbreviation: AMP
+tradition: Protestant
+year: "1965"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so [greatly] loved and dearly prized the world, that He [even] gave His [One and] only begotten Son, so that whoever believes and trusts in Him [as Savior] shall not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "Masoretic Text"
+    - Septuagint
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: medium
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Uses formal equivalence supplemented with bracketed expansions to convey nuances"
+historical_context:
+  commission: "Lockman Foundation and Zondervan"
+  purpose: "Bring out shades of meaning from the original languages for devotional study"

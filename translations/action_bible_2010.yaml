@@ -1,0 +1,25 @@
+translation: "The Action Bible"
+abbreviation: Action
+tradition: "Adaptation"
+year: "2010"
+example_verse:
+  reference: "John 3:16"
+  text: "Comic‑book retelling of John 3:16 presenting God's love through graphic storytelling."
+source_texts:
+  primary:
+    - "Various English translations"
+  secondary:
+    - "Earlier picture Bible adaptations"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Illustrated narrative retelling of Bible stories for children and teens; modifies scenes to suit comic book format"
+historical_context:
+  commission: "David C. Cook Publishing"
+  purpose: "Engage young readers with an action‑oriented comic version of the Bible"

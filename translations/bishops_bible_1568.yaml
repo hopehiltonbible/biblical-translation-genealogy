@@ -1,0 +1,33 @@
+# Sources:
+# - The Bishops’ Bible (1568) was commissioned by the Church of England as an alternative to the Geneva Bible.  It revised the Great Bible, with input from several bishops, but did not achieve lasting popularity.
+# - Its version of John 3:16 reads: “For God so loued the worlde, that he gaue his only begotten sonne, that whosoeuer beleueth in hym, shoulde not perishe, but haue euerlastyng lyfe”【256561450741269†L122-L123】.
+translation: "Bishops’ Bible"
+abbreviation: "Bishops’"
+year: "1568"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that he gaue his only begotten sonne, that whosoeuer beleueth in hym, shoulde not perishe, but haue euerlastyng lyfe."
+source_texts:
+  primary:
+    - "Great Bible"
+  secondary:
+    - "Geneva Bible"
+    - "Tyndale and Coverdale translations"
+translation_philosophy:
+  word_for_word: "medium"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "medium"
+  idea_for_idea: "low"
+  syntax_for_syntax: "medium"
+  description: "A revision meant for public worship; it moderated some of the Geneva Bible’s Calvinist notes and updated phrasing but largely followed earlier translations."
+derivation:
+  direct_sources:
+    - "Great Bible"
+  stylistic_influence:
+    - "Geneva Bible"
+    - "Tyndale New Testament"
+  notes: "Prepared by a committee of bishops under Archbishop Matthew Parker; it never eclipsed the Geneva Bible’s popularity."
+historical_context:
+  commission: "Church of England under Archbishop Matthew Parker"
+  purpose: "To produce an authorised Bible suitable for reading in Anglican churches that would counter the Geneva Bible’s influence."

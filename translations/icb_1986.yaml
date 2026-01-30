@@ -1,0 +1,26 @@
+translation: "International Children's Bible"
+abbreviation: ICB
+tradition: Protestant
+year: "1986"
+example_verse:
+  reference: "John 3:16"
+  text: "Yes, God loved the world so much that he gave his only Son, so that everyone who believes in him would not be lost but have eternal life."
+source_texts:
+  primary:
+    - "United Bible Societies' Greek New Testament"
+    - "Biblia Hebraica Stuttgartensia"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Simplified translation for children at a third‑grade reading level"
+historical_context:
+  commission: "International Bible Society and World Bible Translation Center"
+  purpose: "Enable children to read and understand the Bible independently"

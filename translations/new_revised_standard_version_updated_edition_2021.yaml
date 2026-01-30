@@ -1,0 +1,30 @@
+translation: "New Revised Standard Version Updated Edition"
+abbreviation: "NRSVue"
+year: "2021"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Quinta"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "An update to the NRSV incorporating new textual discoveries and thousands of substantive edits while maintaining the translation’s formal equivalence and inclusive language."
+derivation:
+  direct_sources:
+    - "New Revised Standard Version"
+  indirect_influences:
+    - "Revised Standard Version"
+historical_context:
+  commission: "Society of Biblical Literature and National Council of Churches"
+  purpose: "To refine the NRSV based on recent scholarship and to correct textual and philological issues."
+  notes: "Often described as the most meticulously researched English Bible translation to date."

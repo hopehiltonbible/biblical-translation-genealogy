@@ -1,0 +1,29 @@
+translation: "New King James Version"
+abbreviation: "NKJV"
+year: "1982"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life."
+source_texts:
+  primary:
+    - "Textus Receptus (Greek)"
+    - "Biblia Hebraica Stuttgartensia"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "A modern revision of the KJV that strives to preserve the original’s formality and literary style while updating vocabulary and grammar."
+derivation:
+  direct_sources:
+    - "King James Version"
+  indirect_influences:
+    - "Tyndale Bible"
+historical_context:
+  commission: "Thomas Nelson Publishers"
+  purpose: "To offer a translation true to the KJV’s tradition but with contemporary language accessible to modern readers."
+  notes: "New Testament published in 1979; complete Bible released in 1982."

@@ -1,0 +1,29 @@
+translation: "Black Bible Chronicles"
+abbreviation: "BBC"
+year: "1993–1999"
+tradition: "Adaptation"
+example_verse:
+  reference: "John 3:16"
+  text: "Retells the message of John 3:16 in African‑American vernacular, summarising the theme of God’s sacrificial love in streetwise language rather than quoting the verse word‑for‑word."
+source_texts:
+  primary:
+    - "King James Version"
+  secondary:
+    - "New Revised Standard Version"
+    - "Good News Bible"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "An adaptive retelling of selected Old Testament narratives and the Gospels into African‑American Vernacular English; emphasises rhythm, cadence and cultural resonance over literal translation."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "Cotton Patch Version"
+    - "The Aussie Bible"
+historical_context:
+  commission: "P. K. McCary"
+  purpose: "To engage African‑American readers by presenting biblical stories in the colloquial language and cultural context of the 'hood."
+  notes: "Published in two volumes (1993 and 1999); summarises rather than translates the biblical text."

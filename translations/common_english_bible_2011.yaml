@@ -1,0 +1,32 @@
+translation: "Common English Bible"
+abbreviation: "CEB"
+year: "2011"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son so that everyone who believes in him won't perish but will have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Biblia Hebraica Quinta"
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Septuagint"
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "low"
+  description: "A mediating translation created by a consortium of mainline Protestant publishers; employs gender‑inclusive language and aims for clarity and naturalness at a seventh‑grade reading level."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "New Revised Standard Version"
+    - "New International Version"
+historical_context:
+  commission: "Common English Bible Collaborative (Abingdon Press, Chalice Press, Westminster John Knox, Church Publishing, Pilgrim Press)"
+  purpose: "To produce a Bible translation that is understandable, accurate and inclusive for congregational use."
+  notes: "New Testament released in 2010; complete Bible released in 2011, including books used by Roman Catholics."

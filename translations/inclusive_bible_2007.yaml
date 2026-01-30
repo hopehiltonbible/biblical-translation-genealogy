@@ -1,0 +1,25 @@
+translation: "The Inclusive Bible"
+abbreviation: IB
+tradition: "Protestant/Catholic (ecumenical)"
+year: "2007"
+example_verse:
+  reference: "John 3:16"
+  text: "For Love so loved the world that Love gave us a Child, so that everyone who believes may not perish but have eternal life."
+source_texts:
+  primary:
+    - "Original Hebrew and Greek texts"
+  secondary:
+    - "Various English translations for comparison"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Inclusive‑language translation by Priests for Equality that rethinks gendered and oppressive language while remaining faithful to the underlying text"
+historical_context:
+  commission: "Priests for Equality"
+  purpose: "Provide a modern English translation that eradicates sexism and transcends gendered language in scripture"

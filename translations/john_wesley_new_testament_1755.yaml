@@ -1,0 +1,28 @@
+translation: "John Wesley's New Testament"
+abbreviation: "Wesley NT"
+year: "1755"
+tradition: "Methodist"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him, may not perish, but have everlasting life."
+source_texts:
+  primary:
+    - "Textus Receptus"
+  secondary:
+    - "Bengel's Greek text"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+  description: "A light revision of the King James Version informed by Johann Bengel’s critical Greek text; Wesley made modest stylistic changes for clarity while preserving the literal character of the KJV."
+derivation:
+  direct_sources:
+    - "King James Version"
+  indirect_influences:
+    - "Bengel's Greek text"
+historical_context:
+  commission: "John Wesley"
+  purpose: "To provide Methodists with a more accurate and accessible New Testament for preaching and study."
+  notes: "Wesley published his revision in 1755, emphasising Greek textual insights and improved phraseology while retaining much of the KJV's wording."

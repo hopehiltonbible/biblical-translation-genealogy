@@ -1,0 +1,34 @@
+# Sources:
+# - The Tyndale Bible is credited as the first English translation to be printed directly from the Greek and Hebrew texts; it was mass‑produced and drew on Erasmus’s Greek and Latin New Testament as well as Luther’s German version and the Vulgate【919271555357166†L59-L66】.
+# - John 3:16 in the Tyndale New Testament reads: “For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe”【256561450741269†L125-L131】.
+translation: "Tyndale New Testament"
+abbreviation: "TYN"
+year: "1526 (revised 1534)"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe."
+source_texts:
+  primary:
+    - "Erasmus’s Greek and Latin New Testament"
+    - "Original Hebrew scriptures (as available)"
+  secondary:
+    - "Luther Bible (German)"
+    - "Latin Vulgate"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "Formal and pioneering; Tyndale aimed to render each Greek or Hebrew word into clear English while preserving the original syntax whenever possible."
+derivation:
+  direct_sources:
+    - "Greek New Testament (Erasmus)"
+  stylistic_influence:
+    - "Luther’s German Bible"
+    - "Latin Vulgate"
+  notes: "William Tyndale undertook the translation independently; his work set the foundation for most later English Bibles."
+historical_context:
+  commission: "William Tyndale (independent translator)"
+  purpose: "To provide the common people with an English New Testament drawn from the original languages and to challenge ecclesiastical control of Scripture."

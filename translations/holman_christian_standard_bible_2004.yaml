@@ -1,0 +1,30 @@
+translation: "Holman Christian Standard Bible"
+abbreviation: "HCSB"
+year: "2004"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world in this way: He gave His One and Only Son, so that everyone who believes in Him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Nestle–Aland Novum Testamentum Graece"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: moderate
+  idea_for_idea: moderate
+  syntax_for_syntax: moderate
+  description: "Employs 'optimal equivalence'—a mediating approach that preserves literal wording when possible while allowing dynamic translation when necessary for clarity."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "King James Version"
+    - "New International Version"
+historical_context:
+  commission: "Broadman & Holman Publishers and LifeWay Christian Resources"
+  purpose: "To provide an accurate, readable modern English translation for personal study, public reading, and memorisation."
+  notes: "The translation committee included scholars from various evangelical denominations; a successor edition, the Christian Standard Bible (CSB), was released in 2017."

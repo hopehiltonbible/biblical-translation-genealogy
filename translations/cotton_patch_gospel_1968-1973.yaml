@@ -1,0 +1,28 @@
+translation: "Cotton Patch Version"
+abbreviation: "Cotton Patch"
+year: "1968–1973"
+tradition: "Adaptation"
+example_verse:
+  reference: "John 3:16"
+  text: "Contextualises John 3:16 for mid‑20th‑century Southern United States, recasting God’s love and the sending of the Son in contemporary places like Atlanta and Selma rather than quoting the verse verbatim."
+source_texts:
+  primary:
+    - "American Standard Version"
+  secondary:
+    - "Good News for Modern Man"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "An imaginative, culturally specific retelling that substitutes modern Southern US names and situations for biblical locations and concepts; prioritises conveying the message’s impact over literal adherence."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "Civil Rights Movement"
+historical_context:
+  commission: "Clarence Jordan"
+  purpose: "To make the New Testament message relevant to readers in the context of the mid‑20th‑century American South."
+  notes: "Jordan’s translations of the Gospels and Paul’s letters grew out of the Koinonia Farm community during the Civil Rights era and were published incrementally from 1968 to 1973."

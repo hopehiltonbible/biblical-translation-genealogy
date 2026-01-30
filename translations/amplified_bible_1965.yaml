@@ -1,0 +1,30 @@
+translation: "Amplified Bible"
+abbreviation: "AMP"
+year: "1965"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so greatly loved and dearly prized the world that He [even] gave His [One and] only begotten Son, so that whoever believes and trusts in Him [as Savior] shall not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Masoretic Text"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "high"
+  description: "A largely formal translation supplemented with bracketed amplifications to convey nuances of the original languages."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "New American Standard Bible"
+historical_context:
+  commission: "Zondervan and Lockman Foundation"
+  purpose: "To bring out the full meaning of the biblical text by showing alternate renderings and nuances within the translation."
+  notes: "The Old Testament was completed in 1965; the New Testament was first published in 1958; revisions have followed."

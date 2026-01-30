@@ -1,0 +1,31 @@
+translation: "New English Translation"
+abbreviation: "NET"
+year: "2005"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For this is the way God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "UBS Greek New Testament"
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "moderate"
+  description: "A fresh translation noted for its extensive footnotes explaining textual variants and translation choices; aims to mediate between formal and dynamic equivalence."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "New International Version"
+    - "New American Standard Bible"
+historical_context:
+  commission: "Biblical Studies Foundation"
+  purpose: "To provide an online Bible translation freely accessible with scholarly notes and transparent translation decisions."
+  notes: "The NET Bible was first published electronically in 2001; the complete print edition followed in 2005."

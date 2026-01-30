@@ -1,0 +1,27 @@
+translation: "JPS Tanakh (1917)"
+abbreviation: "JPS 1917"
+year: "1917"
+tradition: "Jewish"
+example_verse:
+  reference: "John 3:16"
+  text: "Not applicable — this Jewish translation includes only the Hebrew Bible (Old Testament)."
+source_texts:
+  primary:
+    - "Masoretic Text"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+  description: "A formal-equivalence translation supervised by a committee led by Max Margolis; its literary style echoes the King James Version while striving for fidelity to the Hebrew text."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "King James Version"
+historical_context:
+  commission: "Jewish Publication Society of America"
+  purpose: "To provide an authoritative English translation of the Hebrew Bible for Jewish communities."
+  notes: "Completed in 1917 after decades of work; widely used in American synagogues and Jewish scholarship."

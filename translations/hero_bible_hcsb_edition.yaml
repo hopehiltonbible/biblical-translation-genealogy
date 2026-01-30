@@ -1,0 +1,27 @@
+translation: "Hero Bible (HCSB Edition)"
+abbreviation: "Hero HCSB"
+year: "2010s"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world in this way: He gave His One and Only Son, so that everyone who believes in Him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Holman Christian Standard Bible"
+  secondary:
+    - "Profession-specific devotionals and articles"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: moderate
+  idea_for_idea: moderate
+  syntax_for_syntax: moderate
+  description: "Not a new translation but a themed edition of the Holman Christian Standard Bible tailored for law enforcement officers, firefighters, military personnel and other first responders, with supplementary content relevant to their vocations."
+derivation:
+  direct_sources:
+    - "Holman Christian Standard Bible"
+  indirect_influences: []
+historical_context:
+  commission: "Holman Bible Publishers"
+  purpose: "To encourage and support emergency-response professionals by pairing the HCSB translation with devotionals and inspirational articles specific to their roles."
+  notes: "Part of the 'Hero Bibles' line that includes editions for firefighters, law enforcement officers, EMS responders, soldiers and other public servants."

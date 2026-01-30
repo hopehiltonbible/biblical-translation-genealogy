@@ -1,0 +1,30 @@
+translation: "Hawaiian Pidgin Bible (Da Good An Spesho Book)"
+abbreviation: "Hawaiian Pidgin"
+year: "2000–2012"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "God wen get so plenny love an aloha fo da peopo inside da world, dat he wen send me, his one an ony Boy, so dat everybody dat trus me no get cut off from God, but get da real kine life dat stay to da max foeva."
+source_texts:
+  primary:
+    - "UBS Greek New Testament"
+    - "Hebrew Masoretic Text"
+  secondary:
+    - "Septuagint"
+    - "English translations and commentaries"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: moderate
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "Rendered into Hawaiian Pidgin by local translators who aimed to capture the thought and tone of the original languages in colloquial speech; emphasises natural phrasing over literal word order."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "New International Version"
+    - "Revised Standard Version"
+historical_context:
+  commission: "Wycliffe Bible Translators and 29 Pidgin-speaking Hawaiians"
+  purpose: "To provide the Bible in the heart language of Hawaiʻi Pidgin speakers for greater accessibility and comprehension."
+  notes: "The New Testament was completed as Da Jesus Book in 2000; the full Da Good An Spesho Book, containing the Old Testament, was finished in 2012 after more than three decades of collaboration."

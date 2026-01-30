@@ -1,0 +1,33 @@
+# Sources:
+# - The Great Bible (1539) was produced under Miles Coverdale and drew heavily on William Tyndale’s English New Testament and John Rogers’ Matthew’s Bible.  It became the first English Bible authorised for use in the Church of England【285709022419918†L45-L51】.
+# - As the Great Bible reprints Tyndale’s wording, its rendering of John 3:16 follows the same line as other early modern versions: “For God so loued the worlde, that he gaue his only begotten sonne, that whosoever beleueth in hym shoulde not perishe, but haue everlasting life”【256561450741269†L122-L123】.
+translation: "Great Bible"
+abbreviation: "Great"
+year: "1539"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that he gaue his only begotten sonne, that whosoever beleueth in hym shoulde not perishe, but haue everlasting life."
+source_texts:
+  primary:
+    - "Tyndale’s New Testament"
+    - "Matthew’s Bible"
+  secondary:
+    - "Coverdale’s translations"
+translation_philosophy:
+  word_for_word: "medium"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "medium"
+  description: "A revision designed for public reading; it softened some of Tyndale’s diction but remained broadly literal and retained the syntax of its sources."
+derivation:
+  direct_sources:
+    - "Matthew’s Bible"
+  stylistic_influence:
+    - "Tyndale New Testament"
+    - "Coverdale Bible"
+  notes: "Known as the ‘Chained Bible’ because copies were chained to church lecterns; it served as the authorised Bible until replaced by the King James Version."
+historical_context:
+  commission: "Authorized by King Henry VIII and supervised by Thomas Cromwell and Miles Coverdale"
+  purpose: "To provide a standard English Bible for public worship in the Church of England."

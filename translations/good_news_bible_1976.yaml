@@ -1,0 +1,29 @@
+translation: "Good News Bible"
+abbreviation: "GNB/GNT"
+year: "1976"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that he gave his only Son, so that everyone who believes in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Hebrew Masoretic Text"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "Dynamic equivalence translation aimed at readability and missionary use; prioritises conveying ideas in simple contemporary language."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "Theories of Eugene Nida"
+historical_context:
+  commission: "American Bible Society"
+  purpose: "To produce an easy‑to‑read Bible for worldwide evangelism and those for whom English is a second language."
+  notes: "Initially published as the Good News for Modern Man New Testament in 1966; the complete Bible followed in 1976."

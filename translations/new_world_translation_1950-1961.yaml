@@ -1,0 +1,31 @@
+translation: "New World Translation of the Holy Scriptures"
+abbreviation: "NWT"
+year: "1950–1961"
+tradition: "Jehovah's Witnesses"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that he gave his only‑begotten Son, so that everyone exercising faith in him might not be destroyed but have everlasting life."
+source_texts:
+  primary:
+    - "Biblia Hebraica"
+    - "Westcott and Hort Greek Text"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+    - "Masoretic Text variants"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: moderate
+  syntax_for_syntax: moderate
+  description: "A translation prepared by the Watch Tower Society intended to use the best available Hebrew and Greek texts, restore the divine name as 'Jehovah' in both Testaments, and strike a balance between literal and dynamic renderings."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "American Standard Version"
+    - "Revised Standard Version"
+historical_context:
+  commission: "New World Bible Translation Committee"
+  purpose: "To produce a fresh translation that avoids archaic language and reflects the translators’ understanding of the biblical text and theology."
+  notes: "The New Testament was released in 1950, with the complete Bible published in 1961; updated revisions were issued in 1984 and 2013."

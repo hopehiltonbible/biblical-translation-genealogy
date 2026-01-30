@@ -1,0 +1,29 @@
+translation: "New English Bible"
+abbreviation: "NEB"
+year: "1970"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "God loved the world so much that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica (Kittel)"
+    - "RVG Tasker Greek New Testament"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "Dynamic equivalence translation commissioned by British churches; aims to render the meaning of the original languages in modern idiom."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "Revised Standard Version"
+historical_context:
+  commission: "Churches of England, Scotland, Wales and other British denominations"
+  purpose: "To produce a completely new translation free from archaism and ecclesiastical language."
+  notes: "The New Testament appeared in 1961; the complete Bible followed in 1970."

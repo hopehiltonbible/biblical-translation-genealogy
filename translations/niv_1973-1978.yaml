@@ -1,0 +1,27 @@
+translation: "New International Version"
+abbreviation: NIV
+tradition: Protestant
+year: "1973–1978"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - Septuagint
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: medium
+  syntax_for_syntax: medium
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Mediating translation seeking to be accurate, clear and natural; commissioned by an international committee"
+historical_context:
+  commission: "Committee on Bible Translation (CBT)"
+  purpose: "Provide a broadly acceptable evangelical translation balancing accuracy and readability"

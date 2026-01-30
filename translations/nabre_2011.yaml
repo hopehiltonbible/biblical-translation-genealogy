@@ -1,0 +1,30 @@
+translation: "New American Bible Revised Edition"
+abbreviation: NABRE
+tradition: Catholic
+year: "2011"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him might not perish but might have eternal life."
+source_texts:
+  primary:
+    - "Hebrew Masoretic Text"
+    - "Dead Sea Scrolls"
+    - "UBS Greek New Testament"
+  secondary:
+    - Septuagint
+    - "Samaritan Pentateuch"
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: medium
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "New American Bible (1970)"
+    - "Confraternity Bible"
+  stylistic_influence: []
+  notes: "Updated translation reflecting modern scholarship and inclusive language without paraphrasing"
+historical_context:
+  commission: "United States Conference of Catholic Bishops"
+  purpose: "Provide a contemporary English translation suitable for reading, study and liturgy"

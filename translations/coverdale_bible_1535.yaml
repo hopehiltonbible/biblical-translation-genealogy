@@ -1,0 +1,36 @@
+# Sources:
+# - Coverdale’s Bible (1535) was the first complete English Bible in print; Miles Coverdale drew heavily on Tyndale’s New Testament and Pentateuch, the Zürich (Zwingli) German Bible, the Latin Vulgate and Luther’s German translation.  He worked with little knowledge of Greek or Hebrew, instead using existing vernacular and Latin versions【252135726227942†L30-L37】.
+# - John 3:16 in the Coverdale Bible reads: “For God so loued the worlde, that he gaue his onely sonne, that who so euer beleueth in hi, shulde not perishe, but haue euerlasting life”【256561450741269†L125-L127】.
+translation: "Coverdale Bible"
+abbreviation: "Coverdale"
+year: "1535"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that he gaue his onely sonne, that who so euer beleueth in hi, shulde not perishe, but haue euerlasting life."
+source_texts:
+  primary:
+    - "Tyndale’s New Testament (GH revision)"
+    - "Zürich (Zwingli) Bible (German)"
+    - "Latin Vulgate"
+  secondary:
+    - "Luther Bible (German)"
+    - "Pagninus’ Latin translation"
+translation_philosophy:
+  word_for_word: "medium"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "low"
+  description: "A composite translation relying on existing German and Latin versions; Coverdale smoothed Tyndale’s wording for readability and had limited access to the original languages."
+derivation:
+  direct_sources:
+    - "Tyndale New Testament"
+    - "Zürich Bible"
+  stylistic_influence:
+    - "Luther Bible"
+    - "Latin Vulgate"
+  notes: "As the first complete printed English Bible, Coverdale’s edition combined earlier translations and arranged the Old Testament with Apocrypha in separate sections."
+historical_context:
+  commission: "Miles Coverdale under the patronage of Thomas Cromwell"
+  purpose: "To provide the first full English Bible for church use and to advance the Reformation in England."

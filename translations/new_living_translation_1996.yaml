@@ -1,0 +1,33 @@
+translation: "New Living Translation"
+abbreviation: "NLT"
+year: "1996"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For this is how God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+    - "Samaritan Pentateuch"
+    - "Syriac Peshitta"
+    - "Latin Vulgate"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "An evolution of The Living Bible that moves from paraphrase toward dynamic equivalence, blending literal translation with thought‑for‑thought rendering to enhance clarity."
+derivation:
+  direct_sources:
+    - "The Living Bible"
+  indirect_influences:
+    - "New International Version"
+historical_context:
+  commission: "Tyndale House Publishers"
+  purpose: "To produce a clear and accurate translation while retaining the warmth and accessibility of the earlier paraphrase."
+  notes: "Subsequent revisions in 2004 and 2015 further refined the translation."

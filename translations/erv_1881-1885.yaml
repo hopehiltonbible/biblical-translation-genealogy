@@ -1,0 +1,26 @@
+translation: "English Revised Version"
+abbreviation: ERV
+tradition: Protestant
+year: "1881–1885"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Westcott and Hort Greek text"
+    - "Masoretic Text"
+  secondary: []
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "King James Version"
+  stylistic_influence: []
+  notes: "First major revision of the KJV; aimed to update language and incorporate critical Greek texts"
+historical_context:
+  commission: "British revisers"
+  purpose: "Adapt the KJV to modern scholarship while retaining its idiom"

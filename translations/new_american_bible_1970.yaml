@@ -1,0 +1,30 @@
+translation: "New American Bible"
+abbreviation: "NAB/NABRE"
+year: "1970 (revised 2011)"
+tradition: "Catholic"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him might not perish but might have eternal life."
+source_texts:
+  primary:
+    - "Hebrew Masoretic Text"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "low"
+  description: "Balances formal and dynamic equivalence; the 2011 revision (NABRE) incorporates extensive textual and philological updates while maintaining readability."
+derivation:
+  direct_sources:
+    - "Confraternity Bible"
+  indirect_influences:
+    - "Douay–Rheims Bible"
+historical_context:
+  commission: "Confraternity of Christian Doctrine"
+  purpose: "To provide American Catholics with a modern English translation based on original language manuscripts."
+  notes: "The 2011 revision replaces the 1970 Old Testament and 1986 New Testament with updated translation and scholarship."

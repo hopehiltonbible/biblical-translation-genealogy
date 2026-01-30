@@ -1,0 +1,27 @@
+translation: "Douay–Rheims Bible"
+abbreviation: DRB
+tradition: Catholic
+year: "1582–1610"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, as to give his only begotten Son; that whosoever believeth in him, may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate"
+  secondary:
+    - "Comparisons to Hebrew and Greek sources"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "Latin Vulgate"
+  stylistic_influence:
+    - "King James Version"
+  notes: "English translation for Catholic use; later revised by Richard Challoner"
+historical_context:
+  commission: "English College, Douai and Rheims"
+  purpose: "Provide an English Bible for Catholics during the Reformation"

@@ -1,0 +1,30 @@
+translation: "New Revised Standard Version"
+abbreviation: "NRSV"
+year: "1989"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "An ecumenical revision of the RSV emphasising accuracy and clarity with inclusive language where warranted by the original texts."
+derivation:
+  direct_sources:
+    - "Revised Standard Version"
+  indirect_influences:
+    - "American Standard Version"
+historical_context:
+  commission: "National Council of the Churches of Christ in the USA"
+  purpose: "To incorporate advances in textual criticism and to use gender‑inclusive language when faithful to original meanings."
+  notes: "Widely adopted by academic and liturgical communities."

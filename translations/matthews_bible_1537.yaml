@@ -1,0 +1,33 @@
+# Sources:
+# - Matthew’s Bible (1537) combined William Tyndale’s New Testament and Pentateuch with Myles Coverdale’s translations for the rest of the Old Testament and the Apocrypha.  The historical books (Joshua through 2 Chronicles) may represent Tyndale’s unpublished translation; John Rogers edited the volume under the pseudonym “Thomas Matthew”【330106584528311†L18-L33】.
+# - Because the Matthew’s Bible reproduces Tyndale’s New Testament almost verbatim, John 3:16 mirrors Tyndale’s wording: “For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe”【256561450741269†L125-L131】.
+translation: "Matthew’s Bible"
+abbreviation: "Matthew’s"
+year: "1537"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe."
+source_texts:
+  primary:
+    - "Tyndale’s New Testament (1534 revision)"
+    - "Coverdale’s translations of the Old Testament and Apocrypha"
+  secondary:
+    - "Possible unpublished Hebrew translations by Tyndale (historical books)"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "A composite Bible that largely preserves Tyndale’s literal wording and syntax while filling gaps from Coverdale’s smoother renderings."
+derivation:
+  direct_sources:
+    - "Tyndale New Testament"
+    - "Coverdale Bible"
+  stylistic_influence:
+    - "John Rogers’ editorial revisions"
+  notes: "Issued with royal licence under the pseudonym Thomas Matthew, this Bible combined earlier English translations into a single authorised edition."
+historical_context:
+  commission: "Published by printers Richard Grafton and Edward Whitchurch with approval of King Henry VIII"
+  purpose: "To provide a complete English Bible built on Tyndale’s work, with royal sanction for public use."

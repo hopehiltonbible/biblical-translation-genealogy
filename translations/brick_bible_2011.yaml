@@ -1,0 +1,25 @@
+translation: "The Brick Bible"
+abbreviation: Brick
+tradition: "Adaptation"
+year: "2011"
+example_verse:
+  reference: "John 3:16"
+  text: "A free adaptation using Lego dioramas summarising John 3:16 in visual form."
+source_texts:
+  primary:
+    - "Public domain English translations"
+  secondary:
+    - "Narrative additions for dramatic effect"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Illustrated adaptation of Bible stories using Lego scenes by Elbe Spurling; summarises passages rather than translating directly"
+historical_context:
+  commission: "Self‑published project by Elbe Spurling"
+  purpose: "Present Bible stories visually using Lego art for children and adults"

@@ -1,0 +1,27 @@
+translation: "New Century Version"
+abbreviation: NCV
+tradition: Protestant
+year: "1987"
+example_verse:
+  reference: "John 3:16"
+  text: "Yes, God loved the world so much that he gave his only Son, so that everyone who believes in him would not be lost but have eternal life."
+source_texts:
+  primary:
+    - "United Bible Societies' Greek New Testament"
+    - "Biblia Hebraica Stuttgartensia"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources:
+    - "International Children's Bible"
+  stylistic_influence: []
+  notes: "Free translation designed for a fifth‑grade reading level with gender‑neutral language"
+historical_context:
+  commission: "Thomas Nelson Publishers"
+  purpose: "Provide a translation easily understood by children and those learning English"

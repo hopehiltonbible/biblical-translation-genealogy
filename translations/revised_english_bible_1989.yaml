@@ -1,0 +1,30 @@
+translation: "Revised English Bible"
+abbreviation: "REB"
+year: "1989"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A revision of the New English Bible that seeks a balance between literal translation and dynamic equivalence, incorporating inclusive language and a literary style."
+derivation:
+  direct_sources:
+    - "New English Bible"
+  indirect_influences:
+    - "Revised Standard Version"
+historical_context:
+  commission: "United Kingdom’s mainline churches"
+  purpose: "To update the NEB by improving accuracy and literary quality and to adopt gender‑sensitive language where appropriate."
+  notes: "Published by the Oxford and Cambridge University Presses."

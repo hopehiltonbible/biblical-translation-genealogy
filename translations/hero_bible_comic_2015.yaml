@@ -1,0 +1,29 @@
+translation: "Hero Bible (Comic Edition)"
+abbreviation: "Hero Comic"
+year: "2015"
+tradition: "Adaptation"
+example_verse:
+  reference: "John 3:16"
+  text: "Presents the essence of John 3:16 through action-packed illustrations of God's love and sacrifice rather than a direct biblical quotation."
+source_texts:
+  primary:
+    - "Various English translations"
+  secondary:
+    - "The Lion Graphic Bible"
+    - "The Manga Bible"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "A graphic retelling that gives the Bible a superhero treatment; combines and adapts passages to fit comic-book storytelling, focusing on heroes and villains to convey the overarching narrative."
+derivation:
+  direct_sources:
+    - "The Lion Graphic Bible"
+  indirect_influences:
+    - "The Manga Bible"
+historical_context:
+  commission: "Anderson Entertainment/Independent Publishers Group"
+  purpose: "To engage children and comic-book fans by retelling biblical stories in a dynamic, superhero-inspired format."
+  notes: "Created by Siku and Jeff Anderson; merges different gospel accounts and emphasises dramatic visuals over textual fidelity."
