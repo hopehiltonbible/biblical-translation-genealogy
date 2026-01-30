@@ -1,0 +1,66 @@
+romans_1_26_27_plus_2_1:
+  esv:
+    romans_1_26_27:
+      text: "For this reason God gave them up to dishonorable passions. … men committing shameless acts with men and receiving in themselves the due penalty for their error."
+      key_terms:
+        natural_language: "natural relations / unnatural"
+        passion_language: "dishonorable passions"
+        shame_language: "shameless acts"
+    romans_2_1:
+      text: "Therefore you have no excuse, O man, every one of you who judges. For in passing judgment on another you condemn yourself, because you, the judge, practice the very same things."
+      therefore_rendering: "Therefore"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: "God’s Wrath on Unrighteousness"
+      section_header_before_2_1: "God’s Righteous Judgment"
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "The ESV retains chapter and section breaks that obscure the rhetorical continuity but translates Διὸ as 'Therefore,' signalling Paul’s turn from the list of vices to his rebuke of the reader."
+  niv:
+    romans_1_26_27:
+      text: "Because of this, God gave them over to shameful lusts. … Men committed shameful acts with other men, and received in themselves the due penalty for their error."
+      key_terms:
+        natural_language: "natural sexual relations / unnatural ones"
+        passion_language: "shameful lusts"
+        shame_language: "shameful acts"
+    romans_2_1:
+      text: "You, therefore, have no excuse, you who pass judgment on someone else, for at whatever point you judge another, you are condemning yourself, because you who pass judgment do the same things."
+      therefore_rendering: "You, therefore"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: "God’s Wrath Against Sinful Humanity"
+      section_header_before_2_1: "God’s Righteous Judgment"
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "The NIV’s 'You, therefore' makes the rhetorical pivot explicit and emphasises the judge’s complicity."
+  nrsv:
+    romans_1_26_27:
+      text: "For this reason God gave them up to degrading passions; … men committed shameless acts with men and received in their own persons the due penalty for their error."
+      key_terms:
+        natural_language: "natural intercourse / unnatural"
+        passion_language: "degrading passions"
+        shame_language: "shameless acts"
+    romans_2_1:
+      text: "Therefore you have no excuse, whoever you are, when you judge others; for in passing judgment on another you condemn yourself, because you, the judge, are doing the very same things."
+      therefore_rendering: "Therefore"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: "The Guilt of Humankind"
+      section_header_before_2_1: "The Righteous Judgment of God"
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "NRSV, like the ESV, keeps the break but emphasises 'whoever you are' to universalise Paul’s rebuke."
+  the_message:
+    romans_1_26_27:
+      text: "Worse followed. Refusing to know God, they soon didn’t know how to be human. Women didn’t know how to be women; men didn’t know how to be men, and then sexually confused, they abused and defiled one another, men and women alike…"
+      key_terms:
+        natural_language: "didn’t know how to be women/men"
+        passion_language: "sexually confused"
+        shame_language: "abused and defiled"
+    romans_2_1:
+      text: "Those people are on a dark spiral downward. But if you think that leaves you on the high ground where you can point your finger at others, think again. Every time you criticize someone, you condemn yourself."
+      therefore_rendering: "But if you think that leaves you…"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: null
+      section_header_before_2_1: null
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "The Message flattens the chapter structure into a continuous narrative, making the rhetorical trap obvious by turning Paul's 'Therefore' into a clear admonition against finger‑pointing."
+  life_saving_insight: "Across translations, Romans 1:26‑27 lists behaviours that many modern readers see as condemnations of same‑sex conduct.  Yet the Greek conjunction Διὸ (“therefore”) at the start of Romans 2:1 connects that list to Paul’s larger argument.  He is ventriloquizing the judgmental voice in chapter 1 only to turn the accusation back on those who judge.  Reading Romans 1 and 2 as a unit shifts the focus from condemning others to examining our own complicity.  This perspective can be life‑giving for queer readers, reminding them that Paul's point is not that God despises them, but that God condemns judgmentalism."
