@@ -1,0 +1,112 @@
+# Schema for individual Bible translation entries
+#
+# This YAML schema specifies the structure of files in the
+# `translations/` directory.  It uses a simplified schema
+# notation inspired by JSON Schema but adapted for YAML.  The
+# schema is not enforced automatically in this repository; it
+# serves as documentation for contributors and downstream tools.
+
+type: map
+required:
+  - translation
+  - year
+  - example_verse
+  - source_texts
+  - translation_philosophy
+
+mapping:
+  translation:
+    type: str
+    description: The full name of the Bible translation.
+  abbreviation:
+    type: str
+    description: Common abbreviation or acronym, if any (e.g. “KJV”, “NIV”).
+  year:
+    type: str
+    description: The year of first publication or a range of years.  Use a string to allow ranges (e.g. “1609–1610”).
+  tradition:
+    type: str
+    description: Religious tradition (e.g. Protestant, Catholic, Jewish, Ecumenical).
+  example_verse:
+    type: map
+    required:
+      - reference
+      - text
+    mapping:
+      reference:
+        type: str
+        description: Scripture reference for the example verse (e.g. “John 3:16”).
+      text:
+        type: str
+        description: The translation’s rendering of the example verse.
+  source_texts:
+    type: map
+    description: Primary and secondary texts consulted by the translators.
+    required:
+      - primary
+    mapping:
+      primary:
+        type: seq
+        sequence:
+          - type: str
+        description: A list of manuscripts or critical editions that form the primary textual basis.
+      secondary:
+        type: seq
+        sequence:
+          - type: str
+        description: Supplementary texts consulted for comparison or influence.
+  translation_philosophy:
+    type: map
+    description: Assessment of the translation’s approach along multiple axes.
+    required:
+      - word_for_word
+      - sentence_for_sentence
+      - passage_for_passage
+      - idea_for_idea
+      - syntax_for_syntax
+    mapping:
+      word_for_word:
+        type: str
+        description: Degree to which the translation reproduces individual words (e.g. “high”, “moderate”, “low”).
+      sentence_for_sentence:
+        type: str
+        description: Degree to which sentences and clauses are rendered independently.
+      passage_for_passage:
+        type: str
+        description: Degree to which larger discourse units guide translation decisions.
+      idea_for_idea:
+        type: str
+        description: Degree to which the translators prioritise conveying concepts over form.
+      syntax_for_syntax:
+        type: str
+        description: Degree to which original grammatical structures are retained.
+      description:
+        type: str
+        description: Optional free‑form commentary on the translation philosophy.
+  derivation:
+    type: map
+    description: Relationships to earlier English translations.
+    mapping:
+      direct_sources:
+        type: seq
+        sequence:
+          - type: str
+        description: Translations directly revised or adapted.
+      indirect_influences:
+        type: seq
+        sequence:
+          - type: str
+        description: Other translations or sources that influenced wording or philosophy.
+  historical_context:
+    type: map
+    description: Optional historical notes.
+    mapping:
+      commission:
+        type: str
+        description: Sponsoring body or commissioning authority.
+      purpose:
+        type: str
+        description: Stated purpose or motivation behind the translation.
+      notes:
+        type: str
+        description: Additional contextual information.
