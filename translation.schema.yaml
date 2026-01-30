@@ -1,0 +1,31 @@
+# Schema for translation YAML files
+
+# Each translation file must be a mapping with the following fields:
+
+translation: string            # Full name of the Bible translation
+abbreviation: string           # Common abbreviation (e.g. KJV, NIV)
+tradition: string              # Broad religious tradition (Protestant, Catholic, Jewish, etc.)
+year: string                   # Year or range of first publication (e.g. "1611" or "1941–1969")
+example_verse:                # Sample verse from John 3:16
+  reference: string           # Biblical reference (always "John 3:16")
+  text: string                # Text of the verse in this translation
+source_texts:                 # Source texts used
+  primary:                    # Primary source texts directly translated
+    - string
+  secondary:                  # Additional sources consulted
+    - string
+translation_philosophy:       # Emphasis along five translation axes
+  word_for_word: string       # high | medium | low
+  sentence_for_sentence: string # high | medium | low
+  passage_for_passage: string # high | medium | low
+  idea_for_idea: string       # high | medium | low
+  syntax_for_syntax: string   # high | medium | low
+derivation:                   # Relationships to previous translations
+  direct_sources:             # Versions directly revised or translated from
+    - string
+  stylistic_influence:        # Versions that influenced style or vocabulary
+    - string
+  notes: string               # Additional explanatory notes
+historical_context:           # Information about commissioning and purpose
+  commission: string          # Organization or individual commissioning the work
+  purpose: string             # Reason for producing this translation
