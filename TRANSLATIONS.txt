@@ -1,0 +1,2275 @@
+﻿Biblical Translation Guide
+This repository catalogues a broad family of English Bible translations. Each translation is represented as a YAML file under the translations/ directory. The project captures more than publication dates: it records sample text (John 3:16), the primary source texts consulted, the relationships to other translations, and a five‑dimensional description of translation philosophy.
+
+Translation philosophy framework
+Traditional labels like formal and dynamic are helpful but often hide the trade‑offs translators make. This guide uses five axes to describe how a translation handles the delicate balance between fidelity and clarity:
+
+Axis	High	Low
+word‑for‑word	Stays close to individual words and their order	Freely departs from word‑level rendering
+sentence‑for‑sentence	Preserves sentence structure and boundary	Merges or recasts sentences for readability
+passage‑for‑passage	Follows the flow of longer units	Reorders or summarises passages
+idea‑for‑idea	Conveys the thought even if wording changes	Prioritises literal wording over modern phrasing
+syntax‑for‑syntax	Retains grammatical form (e.g. verb tenses, clauses)	Replaces structure with target‑language equivalents
+Values of high, medium and low (or occasionally low, moderate, high depending on the file) in the translation files indicate a relative emphasis along each axis when compared to other translations. For example, the King James Version has high word_for_word and syntax_for_syntax values but low idea_for_idea because it prioritises literal wording and structure over modern idiom.
+
+Directory structure
+biblical-translation-guide/
+├── README.md                 # this file
+├── translation.schema.yaml   # schema describing translation file format
+└── translations/             # YAML files for each translation
+    ├── kjv_1611.yaml
+    ├── drb_1582-1610.yaml
+    ├── …
+    └── new_world_translation_1961.yaml
+The filenames are slugified from the translation name and year. They contain the following top‑level keys:
+
+translation: The full name of the Bible version.
+abbreviation: A common abbreviation.
+tradition: Broad religious tradition (Protestant, Catholic, Jewish, etc.).
+year: Year or range of first publication.
+example_verse: An object with reference and text fields for John 3:16.
+source_texts: An object with primary and secondary lists of source texts.
+translation_philosophy: An object with five keys (word_for_word, sentence_for_sentence, passage_for_passage, idea_for_idea, syntax_for_syntax) whose values are high, medium or low.
+derivation: An object noting direct_sources and indirect_influences describing how this translation relates to earlier versions.
+historical_context: An object describing who commissioned the translation and why.
+
+
+# Schema for individual Bible translation entries
+#
+# This YAML schema specifies the structure of files in the
+# `translations/` directory.  It uses a simplified schema
+# notation inspired by JSON Schema but adapted for YAML.  The
+# schema is not enforced automatically in this repository; it
+# serves as documentation for contributors and downstream tools.
+
+type: map
+required:
+  - translation
+  - year
+  - example_verse
+  - source_texts
+  - translation_philosophy
+
+mapping:
+  translation:
+    type: str
+    description: The full name of the Bible translation.
+  abbreviation:
+    type: str
+    description: Common abbreviation or acronym, if any (e.g. “KJV”, “NIV”).
+  year:
+    type: str
+    description: The year of first publication or a range of years.  Use a string to allow ranges (e.g. “1609–1610”).
+  tradition:
+    type: str
+    description: Religious tradition (e.g. Protestant, Catholic, Jewish, Ecumenical).
+  example_verse:
+    type: map
+    required:
+      - reference
+      - text
+    mapping:
+      reference:
+        type: str
+        description: Scripture reference for the example verse (e.g. “John 3:16”).
+      text:
+        type: str
+        description: The translation’s rendering of the example verse.
+  source_texts:
+    type: map
+    description: Primary and secondary texts consulted by the translators.
+    required:
+      - primary
+    mapping:
+      primary:
+        type: seq
+        sequence:
+          - type: str
+        description: A list of manuscripts or critical editions that form the primary textual basis.
+      secondary:
+        type: seq
+        sequence:
+          - type: str
+        description: Supplementary texts consulted for comparison or influence.
+  translation_philosophy:
+    type: map
+    description: Assessment of the translation’s approach along multiple axes.
+    required:
+      - word_for_word
+      - sentence_for_sentence
+      - passage_for_passage
+      - idea_for_idea
+      - syntax_for_syntax
+    mapping:
+      word_for_word:
+        type: str
+        description: Degree to which the translation reproduces individual words (e.g. “high”, “moderate”, “low”).
+      sentence_for_sentence:
+        type: str
+        description: Degree to which sentences and clauses are rendered independently.
+      passage_for_passage:
+        type: str
+        description: Degree to which larger discourse units guide translation decisions.
+      idea_for_idea:
+        type: str
+        description: Degree to which the translators prioritise conveying concepts over form.
+      syntax_for_syntax:
+        type: str
+        description: Degree to which original grammatical structures are retained.
+      description:
+        type: str
+        description: Optional free‑form commentary on the translation philosophy.
+  derivation:
+    type: map
+    description: Relationships to earlier English translations.
+    mapping:
+      direct_sources:
+        type: seq
+        sequence:
+          - type: str
+        description: Translations directly revised or adapted.
+      indirect_influences:
+        type: seq
+        sequence:
+          - type: str
+        description: Other translations or sources that influenced wording or philosophy.
+  historical_context:
+    type: map
+    description: Optional historical notes.
+    mapping:
+      commission:
+        type: str
+        description: Sponsoring body or commissioning authority.
+      purpose:
+        type: str
+        description: Stated purpose or motivation behind the translation.
+      notes:
+        type: str
+        description: Additional contextual information.
+
+translation: "The Action Bible"
+abbreviation: Action
+tradition: "Adaptation"
+year: "2010"
+example_verse:
+  reference: "John 3:16"
+  text: "Comic‑book retelling of John 3:16 presenting God's love through graphic storytelling."
+source_texts:
+  primary:
+    - "Various English translations"
+  secondary:
+    - "Earlier picture Bible adaptations"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Illustrated narrative retelling of Bible stories for children and teens; modifies scenes to suit comic book format"
+historical_context:
+  commission: "David C. Cook Publishing"
+  purpose: "Engage young readers with an action‑oriented comic version of the Bible"
+
+translation: "American Standard Version"
+abbreviation: "ASV"
+year: "1901"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Westcott and Hort Greek New Testament"
+    - "Tregelles Greek New Testament"
+    - "Masoretic Text"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "An American revision of the Revised Version noted for its literalness and consistent use of 'Jehovah' for the divine name."
+derivation:
+  direct_sources:
+    - "English Revised Version"
+  indirect_influences:
+    - "King James Version"
+historical_context:
+  commission: "American revision committee"
+  purpose: "To adapt the British Revised Version for American readership and incorporate American scholarship."
+  notes: "Sometimes criticised for its wooden style due to its strict literalism."
+
+translation: "Amplified Bible"
+abbreviation: AMP
+tradition: Protestant
+year: "1965"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so [greatly] loved and dearly prized the world, that He [even] gave His [One and] only begotten Son, so that whoever believes and trusts in Him [as Savior] shall not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "Masoretic Text"
+    - Septuagint
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: medium
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Uses formal equivalence supplemented with bracketed expansions to convey nuances"
+historical_context:
+  commission: "Lockman Foundation and Zondervan"
+  purpose: "Bring out shades of meaning from the original languages for devotional study"
+
+translation: "American Standard Version"
+abbreviation: ASV
+tradition: Protestant
+year: "1901"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Westcott and Hort Greek text"
+    - "Tregelles Greek text"
+    - "Masoretic Text"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "English Revised Version"
+  stylistic_influence: []
+  notes: "American adaptation of the English Revised Version; retains literalness but uses Americanisms"
+historical_context:
+  commission: "American committee of the ERV revisers"
+  purpose: "Provide an American form of the Revised Version and adopt more literal renderings"
+
+# Sources:
+# - The Bishops’ Bible (1568) was commissioned by the Church of England as an alternative to the Geneva Bible.  It revised the Great Bible, with input from several bishops, but did not achieve lasting popularity.
+# - Its version of John 3:16 reads: “For God so loued the worlde, that he gaue his only begotten sonne, that whosoeuer beleueth in hym, shoulde not perishe, but haue euerlastyng lyfe”【256561450741269†L122-L123】.
+translation: "Bishops’ Bible"
+abbreviation: "Bishops’"
+year: "1568"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that he gaue his only begotten sonne, that whosoeuer beleueth in hym, shoulde not perishe, but haue euerlastyng lyfe."
+source_texts:
+  primary:
+    - "Great Bible"
+  secondary:
+    - "Geneva Bible"
+    - "Tyndale and Coverdale translations"
+translation_philosophy:
+  word_for_word: "medium"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "medium"
+  idea_for_idea: "low"
+  syntax_for_syntax: "medium"
+  description: "A revision meant for public worship; it moderated some of the Geneva Bible’s Calvinist notes and updated phrasing but largely followed earlier translations."
+derivation:
+  direct_sources:
+    - "Great Bible"
+  stylistic_influence:
+    - "Geneva Bible"
+    - "Tyndale New Testament"
+  notes: "Prepared by a committee of bishops under Archbishop Matthew Parker; it never eclipsed the Geneva Bible’s popularity."
+historical_context:
+  commission: "Church of England under Archbishop Matthew Parker"
+  purpose: "To produce an authorised Bible suitable for reading in Anglican churches that would counter the Geneva Bible’s influence."
+
+translation: "Black Bible Chronicles"
+abbreviation: "BBC"
+year: "1993–1999"
+tradition: "Adaptation"
+example_verse:
+  reference: "John 3:16"
+  text: "Retells the message of John 3:16 in African‑American vernacular, summarising the theme of God’s sacrificial love in streetwise language rather than quoting the verse word‑for‑word."
+source_texts:
+  primary:
+    - "King James Version"
+  secondary:
+    - "New Revised Standard Version"
+    - "Good News Bible"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "An adaptive retelling of selected Old Testament narratives and the Gospels into African‑American Vernacular English; emphasises rhythm, cadence and cultural resonance over literal translation."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "Cotton Patch Version"
+    - "The Aussie Bible"
+historical_context:
+  commission: "P. K. McCary"
+  purpose: "To engage African‑American readers by presenting biblical stories in the colloquial language and cultural context of the 'hood."
+  notes: "Published in two volumes (1993 and 1999); summarises rather than translates the biblical text."
+
+
+translation: "The Brick Bible"
+abbreviation: Brick
+tradition: "Adaptation"
+year: "2011"
+example_verse:
+  reference: "John 3:16"
+  text: "A free adaptation using Lego dioramas summarising John 3:16 in visual form."
+source_texts:
+  primary:
+    - "Public domain English translations"
+  secondary:
+    - "Narrative additions for dramatic effect"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Illustrated adaptation of Bible stories using Lego scenes by Elbe Spurling; summarises passages rather than translating directly"
+historical_context:
+  commission: "Self‑published project by Elbe Spurling"
+  purpose: "Present Bible stories visually using Lego art for children and adults"
+translation: "Confraternity Bible"
+abbreviation: CB
+tradition: Catholic
+year: "1941–1969"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only‑begotten Son, that those who believe in him may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate"
+    - "Hebrew Masoretic Text"
+  secondary:
+    - "Greek manuscripts"
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "Douay–Rheims Bible"
+  stylistic_influence: []
+  notes: "Modern English revision of the Douay–Rheims produced by the Catholic Biblical Association"
+historical_context:
+  commission: "Catholic Biblical Association of America"
+  purpose: "Update the Douay translation into intelligible modern English and incorporate modern textual scholarship"
+
+translation: "Common English Bible"
+abbreviation: CEB
+tradition: "Protestant (ecumenical)"
+year: "2010–2011"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son so that everyone who believes in him won't perish but will have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Biblia Hebraica Quinta"
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Göttingen Septuagint"
+    - "Rahlfs–Hanhart Septuagint"
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: medium
+  syntax_for_syntax: medium
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Mediating translation produced by an alliance of mainline Protestant publishers with inclusive language"
+historical_context:
+  commission: "Common English Bible Committee (Abingdon, Chalice, Westminster John Knox, etc.)"
+  purpose: "Create a clear, contemporary translation suitable for reading aloud and inclusive of all readers"
+
+translation: "Common English Bible"
+abbreviation: "CEB"
+year: "2011"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son so that everyone who believes in him won't perish but will have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Biblia Hebraica Quinta"
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Septuagint"
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "low"
+  description: "A mediating translation created by a consortium of mainline Protestant publishers; employs gender‑inclusive language and aims for clarity and naturalness at a seventh‑grade reading level."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "New Revised Standard Version"
+    - "New International Version"
+historical_context:
+  commission: "Common English Bible Collaborative (Abingdon Press, Chalice Press, Westminster John Knox, Church Publishing, Pilgrim Press)"
+  purpose: "To produce a Bible translation that is understandable, accurate and inclusive for congregational use."
+  notes: "New Testament released in 2010; complete Bible released in 2011, including books used by Roman Catholics."
+
+translation: "Confraternity Bible"
+abbreviation: "CB"
+year: "1941"
+tradition: "Catholic"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only‑begotten Son, that those who believe in him may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate (Clementine)"
+  secondary:
+    - "Greek manuscripts"
+    - "Hebrew Masoretic Text"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "Modernised revision of the Douay–Rheims Bible; initially translated from the Vulgate and later parts from the Hebrew Masoretic text."
+derivation:
+  direct_sources:
+    - "Douay–Rheims Bible"
+  indirect_influences:
+    - "Latin Vulgate"
+historical_context:
+  commission: "Catholic Biblical Association of America"
+  purpose: "To update the Douay–Rheims translation into intelligible 20th‑century English."
+  notes: "Old Testament portions were gradually replaced after 1943 following the papal encyclical *Divino Afflante Spiritu* with translations from Hebrew."
+
+translation: "Cotton Patch Version"
+abbreviation: "Cotton Patch"
+year: "1968–1973"
+tradition: "Adaptation"
+example_verse:
+  reference: "John 3:16"
+  text: "Contextualises John 3:16 for mid‑20th‑century Southern United States, recasting God’s love and the sending of the Son in contemporary places like Atlanta and Selma rather than quoting the verse verbatim."
+source_texts:
+  primary:
+    - "American Standard Version"
+  secondary:
+    - "Good News for Modern Man"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "An imaginative, culturally specific retelling that substitutes modern Southern US names and situations for biblical locations and concepts; prioritises conveying the message’s impact over literal adherence."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "Civil Rights Movement"
+historical_context:
+  commission: "Clarence Jordan"
+  purpose: "To make the New Testament message relevant to readers in the context of the mid‑20th‑century American South."
+  notes: "Jordan’s translations of the Gospels and Paul’s letters grew out of the Koinonia Farm community during the Civil Rights era and were published incrementally from 1968 to 1973."
+
+# Sources:
+# - Coverdale’s Bible (1535) was the first complete English Bible in print; Miles Coverdale drew heavily on Tyndale’s New Testament and Pentateuch, the Zürich (Zwingli) German Bible, the Latin Vulgate and Luther’s German translation.  He worked with little knowledge of Greek or Hebrew, instead using existing vernacular and Latin versions【252135726227942†L30-L37】.
+# - John 3:16 in the Coverdale Bible reads: “For God so loued the worlde, that he gaue his onely sonne, that who so euer beleueth in hi, shulde not perishe, but haue euerlasting life”【256561450741269†L125-L127】.
+translation: "Coverdale Bible"
+abbreviation: "Coverdale"
+year: "1535"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that he gaue his onely sonne, that who so euer beleueth in hi, shulde not perishe, but haue euerlasting life."
+source_texts:
+  primary:
+    - "Tyndale’s New Testament (GH revision)"
+    - "Zürich (Zwingli) Bible (German)"
+    - "Latin Vulgate"
+  secondary:
+    - "Luther Bible (German)"
+    - "Pagninus’ Latin translation"
+translation_philosophy:
+  word_for_word: "medium"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "low"
+  description: "A composite translation relying on existing German and Latin versions; Coverdale smoothed Tyndale’s wording for readability and had limited access to the original languages."
+derivation:
+  direct_sources:
+    - "Tyndale New Testament"
+    - "Zürich Bible"
+  stylistic_influence:
+    - "Luther Bible"
+    - "Latin Vulgate"
+  notes: "As the first complete printed English Bible, Coverdale’s edition combined earlier translations and arranged the Old Testament with Apocrypha in separate sections."
+historical_context:
+  commission: "Miles Coverdale under the patronage of Thomas Cromwell"
+  purpose: "To provide the first full English Bible for church use and to advance the Reformation in England."
+
+translation: "Douay–Rheims Bible"
+abbreviation: "DRB"
+year: "1609–1610"
+tradition: "Catholic"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, as to give his only begotten Son; that whosoever believeth in him, may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate"
+  secondary:
+    - "Hebrew Masoretic Text"
+    - "Greek Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "Formal equivalence translation from the Latin Vulgate with occasional reference to Hebrew and Greek sources."
+derivation:
+  direct_sources:
+    - "Vulgate"
+  indirect_influences:
+    - "Geneva Bible"
+historical_context:
+  commission: "English College at Douai and later Rheims"
+  purpose: "To provide English‑speaking Catholics with an authorised translation during a period of Protestant dominance."
+  notes: "The New Testament was published in 1582 at Rheims; the Old Testament in 1609–1610 at Douai."
+
+translation: "Douay–Rheims Bible"
+abbreviation: DRB
+tradition: Catholic
+year: "1582–1610"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, as to give his only begotten Son; that whosoever believeth in him, may not perish, but may have life everlasting."
+source_texts:
+  primary:
+    - "Latin Vulgate"
+  secondary:
+    - "Comparisons to Hebrew and Greek sources"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "Latin Vulgate"
+  stylistic_influence:
+    - "King James Version"
+  notes: "English translation for Catholic use; later revised by Richard Challoner"
+historical_context:
+  commission: "English College, Douai and Rheims"
+  purpose: "Provide an English Bible for Catholics during the Reformation"
+
+
+translation: "English Revised Version"
+abbreviation: "ERV/Revised Version"
+year: "1885"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Westcott and Hort Greek New Testament"
+    - "Masoretic Text"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "Literal revision of the King James Version reflecting advances in textual criticism; retains much of the KJV wording while correcting known errors."
+derivation:
+  direct_sources:
+    - "King James Version"
+  indirect_influences:
+    - "Tyndale Bible"
+historical_context:
+  commission: "Revision committees of the Church of England and the American revision committee"
+  purpose: "To update the KJV by incorporating contemporary scholarship and adapting the language for late nineteenth‑century readers."
+  notes: "New Testament published in 1881, Old Testament in 1885 and Apocrypha in 1894."
+
+
+translation: "English Standard Version"
+abbreviation: "ESV"
+year: "2001"
+tradition: "Protestant/Evangelical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "An essentially literal translation derived from the RSV; strives for word‑for‑word fidelity while maintaining readability."
+derivation:
+  direct_sources:
+    - "Revised Standard Version"
+  indirect_influences:
+    - "King James Version"
+    - "American Standard Version"
+historical_context:
+  commission: "Crossway"
+  purpose: "To provide a precise yet readable translation grounded in the Tyndale–King James tradition."
+  notes: "Minor text updates released in 2007, 2011 and 2016."
+
+translation: "English Revised Version"
+abbreviation: ERV
+tradition: Protestant
+year: "1881–1885"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him should not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Westcott and Hort Greek text"
+    - "Masoretic Text"
+  secondary: []
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "King James Version"
+  stylistic_influence: []
+  notes: "First major revision of the KJV; aimed to update language and incorporate critical Greek texts"
+historical_context:
+  commission: "British revisers"
+  purpose: "Adapt the KJV to modern scholarship while retaining its idiom"
+
+translation: "English Standard Version"
+abbreviation: ESV
+tradition: Protestant
+year: "2001"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+    - "Novum Testamentum Graece"
+  secondary:
+    - Septuagint
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "Revised Standard Version"
+  stylistic_influence: []
+  notes: "Essentially literal translation aimed at accuracy and literary excellence"
+historical_context:
+  commission: "Crossway (Good News Publishers)"
+  purpose: "Produce a word‑for‑word translation balancing readability with fidelity"
+
+# Sources:
+# - The Geneva Bible was produced by English Protestant exiles in Geneva in 1560; it was the first English Bible to use numbered verses and drew directly on the Hebrew and Greek texts.  It became known as the “People’s Bible” for its accessibility and marginal notes.
+# - John 3:16 in the Geneva Bible reads: “For God so loued the worlde, that hee hath giuen his onely begotten Sonne, that whosoeuer beleeueth in him, should not perish, but haue euerlasting life”【256561450741269†L118-L119】.
+translation: "Geneva Bible"
+abbreviation: "Geneva"
+year: "1560"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that hee hath giuen his onely begotten Sonne, that whosoeuer beleeueth in him, should not perish, but haue euerlasting life."
+source_texts:
+  primary:
+    - "Hebrew Masoretic Text"
+    - "Greek Textus Receptus"
+  secondary:
+    - "Tyndale and Coverdale translations"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "medium"
+  idea_for_idea: "low"
+  syntax_for_syntax: "medium"
+  description: "A pioneering formal translation that combined fidelity to the original languages with clear English phrasing and extensive marginal notes for study."
+derivation:
+  direct_sources:
+    - "Tyndale New Testament"
+    - "Coverdale Bible"
+  stylistic_influence:
+    - "Calvinist scholarship"
+  notes: "The Geneva Bible introduced chapter and verse numbers and influenced English literature; it was popular among Puritans and carried to America."
+historical_context:
+  commission: "English Protestant exiles in Geneva"
+  purpose: "To produce an accurate and accessible English Bible for Protestant readers, complete with explanatory notes and modernised language."
+
+translation: "Good News Bible"
+abbreviation: GNB
+tradition: Protestant
+year: "1966–1976"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that he gave his only Son, so that everyone who believes in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Hebrew Masoretic Text"
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence:
+    - "Eugene Nida's dynamic equivalence theory"
+  notes: "Produced by the American Bible Society to create an easy‑to‑read translation for worldwide mission work"
+historical_context:
+  commission: "American Bible Society"
+  purpose: "Reach people with limited English proficiency with a clear, accessible translation"
+
+
+translation: "Good News Bible"
+abbreviation: "GNB/GNT"
+year: "1976"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that he gave his only Son, so that everyone who believes in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Hebrew Masoretic Text"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "Dynamic equivalence translation aimed at readability and missionary use; prioritises conveying ideas in simple contemporary language."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "Theories of Eugene Nida"
+historical_context:
+  commission: "American Bible Society"
+  purpose: "To produce an easy‑to‑read Bible for worldwide evangelism and those for whom English is a second language."
+  notes: "Initially published as the Good News for Modern Man New Testament in 1966; the complete Bible followed in 1976."
+
+
+
+# Sources:
+# - The Great Bible (1539) was produced under Miles Coverdale and drew heavily on William Tyndale’s English New Testament and John Rogers’ Matthew’s Bible.  It became the first English Bible authorised for use in the Church of England【285709022419918†L45-L51】.
+# - As the Great Bible reprints Tyndale’s wording, its rendering of John 3:16 follows the same line as other early modern versions: “For God so loued the worlde, that he gaue his only begotten sonne, that whosoever beleueth in hym shoulde not perishe, but haue everlasting life”【256561450741269†L122-L123】.
+translation: "Great Bible"
+abbreviation: "Great"
+year: "1539"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loued the worlde, that he gaue his only begotten sonne, that whosoever beleueth in hym shoulde not perishe, but haue everlasting life."
+source_texts:
+  primary:
+    - "Tyndale’s New Testament"
+    - "Matthew’s Bible"
+  secondary:
+    - "Coverdale’s translations"
+translation_philosophy:
+  word_for_word: "medium"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "medium"
+  description: "A revision designed for public reading; it softened some of Tyndale’s diction but remained broadly literal and retained the syntax of its sources."
+derivation:
+  direct_sources:
+    - "Matthew’s Bible"
+  stylistic_influence:
+    - "Tyndale New Testament"
+    - "Coverdale Bible"
+  notes: "Known as the ‘Chained Bible’ because copies were chained to church lecterns; it served as the authorised Bible until replaced by the King James Version."
+historical_context:
+  commission: "Authorized by King Henry VIII and supervised by Thomas Cromwell and Miles Coverdale"
+  purpose: "To provide a standard English Bible for public worship in the Church of England."
+
+
+translation: "Hawaiian Pidgin Bible (Da Good An Spesho Book)"
+abbreviation: "Hawaiian Pidgin"
+year: "2000–2012"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "God wen get so plenny love an aloha fo da peopo inside da world, dat he wen send me, his one an ony Boy, so dat everybody dat trus me no get cut off from God, but get da real kine life dat stay to da max foeva."
+source_texts:
+  primary:
+    - "UBS Greek New Testament"
+    - "Hebrew Masoretic Text"
+  secondary:
+    - "Septuagint"
+    - "English translations and commentaries"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: moderate
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "Rendered into Hawaiian Pidgin by local translators who aimed to capture the thought and tone of the original languages in colloquial speech; emphasises natural phrasing over literal word order."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "New International Version"
+    - "Revised Standard Version"
+historical_context:
+  commission: "Wycliffe Bible Translators and 29 Pidgin-speaking Hawaiians"
+  purpose: "To provide the Bible in the heart language of Hawaiʻi Pidgin speakers for greater accessibility and comprehension."
+  notes: "The New Testament was completed as Da Jesus Book in 2000; the full Da Good An Spesho Book, containing the Old Testament, was finished in 2012 after more than three decades of collaboration."
+
+translation: "Hero Bible (Comic Edition)"
+abbreviation: "Hero Comic"
+year: "2015"
+tradition: "Adaptation"
+example_verse:
+  reference: "John 3:16"
+  text: "Presents the essence of John 3:16 through action-packed illustrations of God's love and sacrifice rather than a direct biblical quotation."
+source_texts:
+  primary:
+    - "Various English translations"
+  secondary:
+    - "The Lion Graphic Bible"
+    - "The Manga Bible"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: low
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+  description: "A graphic retelling that gives the Bible a superhero treatment; combines and adapts passages to fit comic-book storytelling, focusing on heroes and villains to convey the overarching narrative."
+derivation:
+  direct_sources:
+    - "The Lion Graphic Bible"
+  indirect_influences:
+    - "The Manga Bible"
+historical_context:
+  commission: "Anderson Entertainment/Independent Publishers Group"
+  purpose: "To engage children and comic-book fans by retelling biblical stories in a dynamic, superhero-inspired format."
+  notes: "Created by Siku and Jeff Anderson; merges different gospel accounts and emphasises dramatic visuals over textual fidelity."
+
+
+translation: "Hero Bible (HCSB Edition)"
+abbreviation: "Hero HCSB"
+year: "2010s"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world in this way: He gave His One and Only Son, so that everyone who believes in Him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Holman Christian Standard Bible"
+  secondary:
+    - "Profession-specific devotionals and articles"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: moderate
+  idea_for_idea: moderate
+  syntax_for_syntax: moderate
+  description: "Not a new translation but a themed edition of the Holman Christian Standard Bible tailored for law enforcement officers, firefighters, military personnel and other first responders, with supplementary content relevant to their vocations."
+derivation:
+  direct_sources:
+    - "Holman Christian Standard Bible"
+  indirect_influences: []
+historical_context:
+  commission: "Holman Bible Publishers"
+  purpose: "To encourage and support emergency-response professionals by pairing the HCSB translation with devotionals and inspirational articles specific to their roles."
+  notes: "Part of the 'Hero Bibles' line that includes editions for firefighters, law enforcement officers, EMS responders, soldiers and other public servants."
+
+
+translation: "Holman Christian Standard Bible"
+abbreviation: "HCSB"
+year: "2004"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world in this way: He gave His One and Only Son, so that everyone who believes in Him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Nestle–Aland Novum Testamentum Graece"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: moderate
+  idea_for_idea: moderate
+  syntax_for_syntax: moderate
+  description: "Employs 'optimal equivalence'—a mediating approach that preserves literal wording when possible while allowing dynamic translation when necessary for clarity."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "King James Version"
+    - "New International Version"
+historical_context:
+  commission: "Broadman & Holman Publishers and LifeWay Christian Resources"
+  purpose: "To provide an accurate, readable modern English translation for personal study, public reading, and memorisation."
+  notes: "The translation committee included scholars from various evangelical denominations; a successor edition, the Christian Standard Bible (CSB), was released in 2017."
+
+translation: "International Children's Bible"
+abbreviation: ICB
+tradition: Protestant
+year: "1986"
+example_verse:
+  reference: "John 3:16"
+  text: "Yes, God loved the world so much that he gave his only Son, so that everyone who believes in him would not be lost but have eternal life."
+source_texts:
+  primary:
+    - "United Bible Societies' Greek New Testament"
+    - "Biblia Hebraica Stuttgartensia"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Simplified translation for children at a third‑grade reading level"
+historical_context:
+  commission: "International Bible Society and World Bible Translation Center"
+  purpose: "Enable children to read and understand the Bible independently"
+translation: "The Inclusive Bible"
+abbreviation: IB
+tradition: "Protestant/Catholic (ecumenical)"
+year: "2007"
+example_verse:
+  reference: "John 3:16"
+  text: "For Love so loved the world that Love gave us a Child, so that everyone who believes may not perish but have eternal life."
+source_texts:
+  primary:
+    - "Original Hebrew and Greek texts"
+  secondary:
+    - "Various English translations for comparison"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Inclusive‑language translation by Priests for Equality that rethinks gendered and oppressive language while remaining faithful to the underlying text"
+historical_context:
+  commission: "Priests for Equality"
+  purpose: "Provide a modern English translation that eradicates sexism and transcends gendered language in scripture"
+
+translation: "International Children's Bible"
+abbreviation: "ICB"
+year: "1987"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "Yes, God loved the world so much that he gave his only Son, so that everyone who believes in him would not be lost but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "high"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A simplified translation targeted at children, written at a third‑grade reading level; focuses on clarity and avoids idioms unfamiliar to young readers."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "New International Version"
+historical_context:
+  commission: "World Bible Translation Center"
+  purpose: "To make the Bible understandable for children and second‑language learners."
+  notes: "Formed the basis for the later New Century Version."
+
+translation: "John Wesley's New Testament"
+abbreviation: "Wesley NT"
+year: "1755"
+tradition: "Methodist"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth on him, may not perish, but have everlasting life."
+source_texts:
+  primary:
+    - "Textus Receptus"
+  secondary:
+    - "Bengel's Greek text"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+  description: "A light revision of the King James Version informed by Johann Bengel’s critical Greek text; Wesley made modest stylistic changes for clarity while preserving the literal character of the KJV."
+derivation:
+  direct_sources:
+    - "King James Version"
+  indirect_influences:
+    - "Bengel's Greek text"
+historical_context:
+  commission: "John Wesley"
+  purpose: "To provide Methodists with a more accurate and accessible New Testament for preaching and study."
+  notes: "Wesley published his revision in 1755, emphasising Greek textual insights and improved phraseology while retaining much of the KJV's wording."
+
+
+
+
+translation: "JPS Tanakh (1917)"
+abbreviation: "JPS 1917"
+year: "1917"
+tradition: "Jewish"
+example_verse:
+  reference: "John 3:16"
+  text: "Not applicable — this Jewish translation includes only the Hebrew Bible (Old Testament)."
+source_texts:
+  primary:
+    - "Masoretic Text"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+  description: "A formal-equivalence translation supervised by a committee led by Max Margolis; its literary style echoes the King James Version while striving for fidelity to the Hebrew text."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "King James Version"
+historical_context:
+  commission: "Jewish Publication Society of America"
+  purpose: "To provide an authoritative English translation of the Hebrew Bible for Jewish communities."
+  notes: "Completed in 1917 after decades of work; widely used in American synagogues and Jewish scholarship."
+
+translation: "King James Version"
+abbreviation: "KJV"
+year: "1611"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+source_texts:
+  primary:
+    - "Textus Receptus (Greek)"
+  secondary:
+    - "Hebrew Rabbinic Bible (Bomberg)"
+    - "Septuagint"
+    - "Latin Vulgate"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "Formal equivalence; emphasises literal rendering of words and preserves early modern English syntax."
+derivation:
+  direct_sources:
+    - "Tyndale New Testament"
+    - "Coverdale Bible"
+    - "Geneva Bible"
+  indirect_influences:
+    - "Bishops' Bible"
+historical_context:
+  commission: "Commissioned by King James I and the Church of England"
+  purpose: "To create a standard Bible for English‑speaking churches and to unify religious practice."
+  notes: "Translation committee consulted previous English Bibles and various manuscripts."
+
+
+translation: "King James Version"
+abbreviation: KJV
+tradition: Protestant
+year: "1611"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+source_texts:
+  primary:
+    - "Hebrew Rabbinic Bible (Bomberg 1524/5)"
+    - "Beza's Greek Text"
+    - "Textus Receptus"
+  secondary:
+    - Septuagint
+    - "Latin Vulgate"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "Tyndale Bible"
+    - "Coverdale Bible"
+    - "Geneva Bible"
+  stylistic_influence: []
+  notes: "Authorized revision commissioned by the Church of England to produce a standard English Bible"
+historical_context:
+  commission: "Church of England"
+  purpose: "Standardize English scripture for liturgical and private use"
+
+# Sources:
+# - Matthew’s Bible (1537) combined William Tyndale’s New Testament and Pentateuch with Myles Coverdale’s translations for the rest of the Old Testament and the Apocrypha.  The historical books (Joshua through 2 Chronicles) may represent Tyndale’s unpublished translation; John Rogers edited the volume under the pseudonym “Thomas Matthew”【330106584528311†L18-L33】.
+# - Because the Matthew’s Bible reproduces Tyndale’s New Testament almost verbatim, John 3:16 mirrors Tyndale’s wording: “For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe”【256561450741269†L125-L131】.
+translation: "Matthew’s Bible"
+abbreviation: "Matthew’s"
+year: "1537"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe."
+source_texts:
+  primary:
+    - "Tyndale’s New Testament (1534 revision)"
+    - "Coverdale’s translations of the Old Testament and Apocrypha"
+  secondary:
+    - "Possible unpublished Hebrew translations by Tyndale (historical books)"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "A composite Bible that largely preserves Tyndale’s literal wording and syntax while filling gaps from Coverdale’s smoother renderings."
+derivation:
+  direct_sources:
+    - "Tyndale New Testament"
+    - "Coverdale Bible"
+  stylistic_influence:
+    - "John Rogers’ editorial revisions"
+  notes: "Issued with royal licence under the pseudonym Thomas Matthew, this Bible combined earlier English translations into a single authorised edition."
+historical_context:
+  commission: "Published by printers Richard Grafton and Edward Whitchurch with approval of King Henry VIII"
+  purpose: "To provide a complete English Bible built on Tyndale’s work, with royal sanction for public use."
+
+translation: "The Message"
+abbreviation: MSG
+tradition: Protestant
+year: "1993–2002"
+example_verse:
+  reference: "John 3:16"
+  text: "This is how much God loved the world: he gave his Son so everyone who trusts in him can have life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Extreme paraphrase by Eugene H. Peterson rendering Scripture in contemporary idiom"
+historical_context:
+  commission: "Eugene H. Peterson, published by NavPress"
+  purpose: "Offer a fresh, idiomatic paraphrase for devotional reading"
+translation: "New American Bible Revised Edition"
+abbreviation: NABRE
+tradition: Catholic
+year: "2011"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him might not perish but might have eternal life."
+source_texts:
+  primary:
+    - "Hebrew Masoretic Text"
+    - "Dead Sea Scrolls"
+    - "UBS Greek New Testament"
+  secondary:
+    - Septuagint
+    - "Samaritan Pentateuch"
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: medium
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "New American Bible (1970)"
+    - "Confraternity Bible"
+  stylistic_influence: []
+  notes: "Updated translation reflecting modern scholarship and inclusive language without paraphrasing"
+historical_context:
+  commission: "United States Conference of Catholic Bishops"
+  purpose: "Provide a contemporary English translation suitable for reading, study and liturgy"
+
+
+translation: "New American Standard Bible"
+abbreviation: NASB
+tradition: Protestant
+year: "1971"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that He gave His only Son, so that everyone who believes in Him will not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - Septuagint
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Formal equivalence revision with modern scholarship; updated in 1977, 1995 and 2020"
+historical_context:
+  commission: "Lockman Foundation"
+  purpose: "Provide the most literal translation possible while preserving readability"
+
+
+translation: "New Century Version"
+abbreviation: NCV
+tradition: Protestant
+year: "1987"
+example_verse:
+  reference: "John 3:16"
+  text: "Yes, God loved the world so much that he gave his only Son, so that everyone who believes in him would not be lost but have eternal life."
+source_texts:
+  primary:
+    - "United Bible Societies' Greek New Testament"
+    - "Biblia Hebraica Stuttgartensia"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources:
+    - "International Children's Bible"
+  stylistic_influence: []
+  notes: "Free translation designed for a fifth‑grade reading level with gender‑neutral language"
+historical_context:
+  commission: "Thomas Nelson Publishers"
+  purpose: "Provide a translation easily understood by children and those learning English"
+
+
+translation: "New English Bible"
+abbreviation: NEB
+tradition: Protestant
+year: "1961–1970"
+example_verse:
+  reference: "John 3:16"
+  text: "God loved the world so much that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica (Kittel)"
+    - "Tasker Greek New Testament"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Produced by British churches to provide a fresh translation using dynamic equivalence"
+historical_context:
+  commission: "Joint Committee of the Church of England and other British churches"
+  purpose: "Offer a modern idiomatic translation for common English readers"
+
+
+translation: "New English Translation"
+abbreviation: NET
+tradition: Protestant
+year: "1996–2005"
+example_verse:
+  reference: "John 3:16"
+  text: "For this is the way God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: medium
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Commissioned as a completely new translation with extensive translators' notes explaining choices"
+historical_context:
+  commission: "Biblical Studies Foundation (now Bible.org)"
+  purpose: "Provide a free online translation with transparent notes and scholarly rigor"
+
+translation: "New American Bible"
+abbreviation: "NAB/NABRE"
+year: "1970 (revised 2011)"
+tradition: "Catholic"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him might not perish but might have eternal life."
+source_texts:
+  primary:
+    - "Hebrew Masoretic Text"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "low"
+  description: "Balances formal and dynamic equivalence; the 2011 revision (NABRE) incorporates extensive textual and philological updates while maintaining readability."
+derivation:
+  direct_sources:
+    - "Confraternity Bible"
+  indirect_influences:
+    - "Douay–Rheims Bible"
+historical_context:
+  commission: "Confraternity of Christian Doctrine"
+  purpose: "To provide American Catholics with a modern English translation based on original language manuscripts."
+  notes: "The 2011 revision replaces the 1970 Old Testament and 1986 New Testament with updated translation and scholarship."
+
+translation: "New American Standard Bible"
+abbreviation: "NASB"
+year: "1971"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that He gave His only begotten Son, that whoever believes in Him shall not perish, but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "UBS Greek New Testament"
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "A revision of the ASV aimed at maximum formal equivalence while improving English readability; often considered one of the most literal modern translations."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "King James Version"
+historical_context:
+  commission: "Lockman Foundation"
+  purpose: "To create a strictly literal translation reflecting the best Hebrew and Greek scholarship available."
+  notes: "Major updates released in 1977, 1995 and 2020."
+
+
+translation: "New Century Version"
+abbreviation: "NCV"
+year: "1987"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "God loved the world so much that he gave his one and only Son so that whoever believes in him may not be lost, but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "high"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A thought‑for‑thought translation derived from the International Children’s Bible; aimed at a fifth‑grade reading level with gender‑inclusive language."
+derivation:
+  direct_sources:
+    - "International Children's Bible"
+  indirect_influences:
+    - "New International Version"
+historical_context:
+  commission: "World Bible Translation Center"
+  purpose: "To provide a clear and simple translation for readers whose first language is not English and for younger readers."
+  notes: "Language is simplified and inclusive; avoids archaic vocabulary."
+
+translation: "New English Bible"
+abbreviation: "NEB"
+year: "1970"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "God loved the world so much that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica (Kittel)"
+    - "RVG Tasker Greek New Testament"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "Dynamic equivalence translation commissioned by British churches; aims to render the meaning of the original languages in modern idiom."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "Revised Standard Version"
+historical_context:
+  commission: "Churches of England, Scotland, Wales and other British denominations"
+  purpose: "To produce a completely new translation free from archaism and ecclesiastical language."
+  notes: "The New Testament appeared in 1961; the complete Bible followed in 1970."
+translation: "New English Translation"
+abbreviation: "NET"
+year: "2005"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For this is the way God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "UBS Greek New Testament"
+    - "Dead Sea Scrolls"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "moderate"
+  description: "A fresh translation noted for its extensive footnotes explaining textual variants and translation choices; aims to mediate between formal and dynamic equivalence."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "New International Version"
+    - "New American Standard Bible"
+historical_context:
+  commission: "Biblical Studies Foundation"
+  purpose: "To provide an online Bible translation freely accessible with scholarly notes and transparent translation decisions."
+  notes: "The NET Bible was first published electronically in 2001; the complete print edition followed in 2005."
+
+
+translation: "New International Version"
+abbreviation: "NIV"
+year: "1978 (revised 2011)"
+tradition: "Protestant/Evangelical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "moderate"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "moderate"
+  syntax_for_syntax: "low"
+  description: "A mediating translation that seeks to convey the original meaning in natural English; avoids strict word‑for‑word translation when it would obscure the sense."
+derivation:
+  direct_sources:
+    - "None (new translation)"
+  indirect_influences:
+    - "American Standard Version"
+    - "King James Version"
+historical_context:
+  commission: "International Bible Society"
+  purpose: "To provide an accurate, clear and contemporary English translation suitable for public and private reading."
+  notes: "New Testament first published in 1973; complete Bible in 1978; revisions in 1984 and 2011."
+
+
+translation: "New JPS Tanakh (1985)"
+abbreviation: "NJPS"
+year: "1985"
+tradition: "Jewish"
+example_verse:
+  reference: "John 3:16"
+  text: "Not applicable — this Jewish translation includes only the Hebrew Bible (Old Testament)."
+source_texts:
+  primary:
+    - "Masoretic Text"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: moderate
+  description: "A fresh translation from the original Hebrew by an interdenominational team of Jewish scholars; seeks to convey the original meaning with clear contemporary English while maintaining literary beauty."
+derivation:
+  direct_sources:
+    - "JPS Tanakh (1917)"
+  indirect_influences:
+    - "Modern biblical scholarship"
+historical_context:
+  commission: "Jewish Publication Society"
+  purpose: "To replace the 1917 JPS translation with a rendering reflective of modern scholarship and idiom."
+  notes: "Individual sections were published between 1955 and 1978; the complete Tanakh was issued in 1985 and is widely used in Jewish study Bibles."
+
+translation: "New King James Version"
+abbreviation: "NKJV"
+year: "1982"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life."
+source_texts:
+  primary:
+    - "Textus Receptus (Greek)"
+    - "Biblia Hebraica Stuttgartensia"
+  secondary:
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "A modern revision of the KJV that strives to preserve the original’s formality and literary style while updating vocabulary and grammar."
+derivation:
+  direct_sources:
+    - "King James Version"
+  indirect_influences:
+    - "Tyndale Bible"
+historical_context:
+  commission: "Thomas Nelson Publishers"
+  purpose: "To offer a translation true to the KJV’s tradition but with contemporary language accessible to modern readers."
+  notes: "New Testament published in 1979; complete Bible released in 1982."
+
+translation: "New Living Translation"
+abbreviation: "NLT"
+year: "1996"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For this is how God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+    - "Samaritan Pentateuch"
+    - "Syriac Peshitta"
+    - "Latin Vulgate"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "An evolution of The Living Bible that moves from paraphrase toward dynamic equivalence, blending literal translation with thought‑for‑thought rendering to enhance clarity."
+derivation:
+  direct_sources:
+    - "The Living Bible"
+  indirect_influences:
+    - "New International Version"
+historical_context:
+  commission: "Tyndale House Publishers"
+  purpose: "To produce a clear and accurate translation while retaining the warmth and accessibility of the earlier paraphrase."
+  notes: "Subsequent revisions in 2004 and 2015 further refined the translation."
+
+translation: "New Revised Standard Version"
+abbreviation: "NRSV"
+year: "1989"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "An ecumenical revision of the RSV emphasising accuracy and clarity with inclusive language where warranted by the original texts."
+derivation:
+  direct_sources:
+    - "Revised Standard Version"
+  indirect_influences:
+    - "American Standard Version"
+historical_context:
+  commission: "National Council of the Churches of Christ in the USA"
+  purpose: "To incorporate advances in textual criticism and to use gender‑inclusive language when faithful to original meanings."
+  notes: "Widely adopted by academic and liturgical communities."
+
+translation: "New Revised Standard Version Updated Edition"
+abbreviation: "NRSVue"
+year: "2021"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Quinta"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "An update to the NRSV incorporating new textual discoveries and thousands of substantive edits while maintaining the translation’s formal equivalence and inclusive language."
+derivation:
+  direct_sources:
+    - "New Revised Standard Version"
+  indirect_influences:
+    - "Revised Standard Version"
+historical_context:
+  commission: "Society of Biblical Literature and National Council of Churches"
+  purpose: "To refine the NRSV based on recent scholarship and to correct textual and philological issues."
+  notes: "Often described as the most meticulously researched English Bible translation to date."
+
+
+
+
+translation: "New World Translation of the Holy Scriptures"
+abbreviation: "NWT"
+year: "1950–1961"
+tradition: "Jehovah's Witnesses"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that he gave his only‑begotten Son, so that everyone exercising faith in him might not be destroyed but have everlasting life."
+source_texts:
+  primary:
+    - "Biblia Hebraica"
+    - "Westcott and Hort Greek Text"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+    - "Masoretic Text variants"
+translation_philosophy:
+  word_for_word: moderate
+  sentence_for_sentence: moderate
+  passage_for_passage: low
+  idea_for_idea: moderate
+  syntax_for_syntax: moderate
+  description: "A translation prepared by the Watch Tower Society intended to use the best available Hebrew and Greek texts, restore the divine name as 'Jehovah' in both Testaments, and strike a balance between literal and dynamic renderings."
+derivation:
+  direct_sources: []
+  indirect_influences:
+    - "American Standard Version"
+    - "Revised Standard Version"
+historical_context:
+  commission: "New World Bible Translation Committee"
+  purpose: "To produce a fresh translation that avoids archaic language and reflects the translators’ understanding of the biblical text and theology."
+  notes: "The New Testament was released in 1950, with the complete Bible published in 1961; updated revisions were issued in 1984 and 2013."
+
+
+
+translation: "New International Version"
+abbreviation: NIV
+tradition: Protestant
+year: "1973–1978"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - Septuagint
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: medium
+  syntax_for_syntax: medium
+derivation:
+  direct_sources: []
+  stylistic_influence: []
+  notes: "Mediating translation seeking to be accurate, clear and natural; commissioned by an international committee"
+historical_context:
+  commission: "Committee on Bible Translation (CBT)"
+  purpose: "Provide a broadly acceptable evangelical translation balancing accuracy and readability"
+
+
+translation: "New King James Version"
+abbreviation: NKJV
+tradition: Protestant
+year: "1979–1982"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Textus Receptus"
+  secondary: []
+translation_philosophy:
+  word_for_word: high
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: high
+derivation:
+  direct_sources:
+    - "King James Version"
+  stylistic_influence: []
+  notes: "Updates the KJV language while remaining faithful to its structure and texts"
+historical_context:
+  commission: "Thomas Nelson Publishers"
+  purpose: "Modernize the language of the KJV without altering its textual base"
+
+translation: "New Living Translation"
+abbreviation: NLT
+tradition: Protestant
+year: "1996"
+example_verse:
+  reference: "John 3:16"
+  text: "For this is how God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life."
+source_texts:
+  primary:
+    - "Masoretic Text (BHS)"
+    - "UBS Greek New Testament"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "Dead Sea Scrolls"
+    - Septuagint
+    - "Samaritan Pentateuch"
+    - Vulgate
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "The Living Bible"
+  stylistic_influence: []
+  notes: "An entirely new translation that carries forward the readability of the Living Bible while abandoning paraphrase"
+historical_context:
+  commission: "Tyndale House Publishers"
+  purpose: "Produce a thought‑for‑thought translation that communicates the original meaning in modern English"
+
+translation: "New Revised Standard Version"
+abbreviation: NRSV
+tradition: "Protestant (ecumenical)"
+year: "1989"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, so that everyone who believes in him may not perish but may have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+    - "UBS Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - Septuagint
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "Revised Standard Version"
+  stylistic_influence: []
+  notes: "Ecumenical revision emphasizing inclusive language and scholarly accuracy"
+historical_context:
+  commission: "National Council of Churches and associated denominations"
+  purpose: "Update the RSV to reflect contemporary scholarship and inclusive language"
+
+translation: "Revised English Bible"
+abbreviation: REB
+tradition: "Protestant (ecumenical)"
+year: "1989"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Dead Sea Scrolls"
+    - "Nestle–Aland Greek Text"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: medium
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources:
+    - "New English Bible"
+  stylistic_influence: []
+  notes: "Revision aimed at balancing literal and dynamic approaches with inclusive language"
+historical_context:
+  commission: "Joint Committee of British churches"
+  purpose: "Update the NEB to incorporate feedback and provide inclusive language"
+
+
+translation: "Revised English Bible"
+abbreviation: "REB"
+year: "1989"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, that everyone who has faith in him may not die but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Nestle–Aland Greek New Testament"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A revision of the New English Bible that seeks a balance between literal translation and dynamic equivalence, incorporating inclusive language and a literary style."
+derivation:
+  direct_sources:
+    - "New English Bible"
+  indirect_influences:
+    - "Revised Standard Version"
+historical_context:
+  commission: "United Kingdom’s mainline churches"
+  purpose: "To update the NEB by improving accuracy and literary quality and to adopt gender‑sensitive language where appropriate."
+  notes: "Published by the Oxford and Cambridge University Presses."
+
+translation: "Revised Standard Version"
+abbreviation: "RSV"
+year: "1952"
+tradition: "Protestant/Ecumenical"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Novum Testamentum Graece"
+  secondary:
+    - "Dead Sea Scrolls"
+    - "Septuagint"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "moderate"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "moderate"
+  description: "An update of the American Standard Version that seeks to preserve literary qualities while incorporating modern scholarship and some modest gender inclusivity."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "King James Version"
+    - "English Revised Version"
+historical_context:
+  commission: "National Council of the Churches of Christ in the USA"
+  purpose: "To provide a readable yet faithful translation suited for public and private use."
+  notes: "New Testament released in 1946; complete Bible in 1952; minor revision of New Testament in 1971."
+
+
+translation: "Revised Standard Version"
+abbreviation: RSV
+tradition: Protestant
+year: "1946–1952"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loved the world that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+source_texts:
+  primary:
+    - "Biblia Hebraica Stuttgartensia"
+    - "Dead Sea Scrolls"
+    - "Novum Testamentum Graece"
+  secondary:
+    - Septuagint
+translation_philosophy:
+  word_for_word: medium
+  sentence_for_sentence: medium
+  passage_for_passage: low
+  idea_for_idea: low
+  syntax_for_syntax: medium
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Revision intended to preserve the best of the KJV lineage while reflecting new manuscript discoveries"
+historical_context:
+  commission: "National Council of the Churches of Christ in the USA"
+  purpose: "Provide a clear, dignified translation combining the accuracy of ASV with improved readability"
+
+translation: "The Living Bible"
+abbreviation: "TLB"
+year: "1971"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that He gave his only Son so that anyone who believes in him shall not perish but have eternal life."
+source_texts:
+  primary:
+    - "American Standard Version (paraphrased)"
+  secondary:
+    - "Greek New Testament texts"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "low"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A personal paraphrase of the ASV by Kenneth N. Taylor; prioritises natural language and readability over literal fidelity."
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  indirect_influences:
+    - "King James Version"
+historical_context:
+  commission: "Tyndale House Publishers (authored by Kenneth N. Taylor)"
+  purpose: "To help children understand the Bible by paraphrasing Scripture into plain English."
+  notes: "Initially released as a series of paraphrased epistles; later compiled into a complete Bible."
+
+translation: "The Message"
+abbreviation: "MSG"
+year: "2002"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "This is how much God loved the world: He gave his Son, his one and only Son."
+source_texts:
+  primary:
+    - "Greek and Hebrew manuscripts"
+  secondary:
+    - "Various modern translations"
+translation_philosophy:
+  word_for_word: "low"
+  sentence_for_sentence: "low"
+  passage_for_passage: "moderate"
+  idea_for_idea: "high"
+  syntax_for_syntax: "low"
+  description: "A contemporary paraphrase by Eugene H. Peterson that renders Scripture in colloquial English, emphasising the spirit of the text over literal wording."
+derivation:
+  direct_sources:
+    - "None (paraphrase)"
+  indirect_influences:
+    - "New Testament in Modern English"
+historical_context:
+  commission: "Authored by Eugene H. Peterson"
+  purpose: "To help modern readers hear the Bible in fresh, everyday language."
+  notes: "New Testament appeared in 1993; the complete Bible was published in 2002."
+
+translation: "The Living Bible"
+abbreviation: TLB
+tradition: Protestant
+year: "1971"
+example_verse:
+  reference: "John 3:16"
+  text: "For God loved the world so much that He gave his only Son so that anyone who believes in him shall not perish but have eternal life."
+source_texts:
+  primary:
+    - "American Standard Version"
+  secondary:
+    - "King James Version"
+    - "Consultations with Greek texts"
+translation_philosophy:
+  word_for_word: low
+  sentence_for_sentence: medium
+  passage_for_passage: high
+  idea_for_idea: high
+  syntax_for_syntax: low
+derivation:
+  direct_sources:
+    - "American Standard Version"
+  stylistic_influence: []
+  notes: "Paraphrase of the ASV by Kenneth N. Taylor for readability"
+historical_context:
+  commission: "Tyndale House Publishers"
+  purpose: "Provide a devotional paraphrase that would help children understand Scripture"
+
+# Sources:
+# - The Tyndale Bible is credited as the first English translation to be printed directly from the Greek and Hebrew texts; it was mass‑produced and drew on Erasmus’s Greek and Latin New Testament as well as Luther’s German version and the Vulgate【919271555357166†L59-L66】.
+# - John 3:16 in the Tyndale New Testament reads: “For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe”【256561450741269†L125-L131】.
+translation: "Tyndale New Testament"
+abbreviation: "TYN"
+year: "1526 (revised 1534)"
+tradition: "Protestant"
+example_verse:
+  reference: "John 3:16"
+  text: "For God so loveth the worlde yt he hath geven his only sonne that none that beleve in him shuld perisshe: but shuld have everlastinge lyfe."
+source_texts:
+  primary:
+    - "Erasmus’s Greek and Latin New Testament"
+    - "Original Hebrew scriptures (as available)"
+  secondary:
+    - "Luther Bible (German)"
+    - "Latin Vulgate"
+translation_philosophy:
+  word_for_word: "high"
+  sentence_for_sentence: "medium"
+  passage_for_passage: "low"
+  idea_for_idea: "low"
+  syntax_for_syntax: "high"
+  description: "Formal and pioneering; Tyndale aimed to render each Greek or Hebrew word into clear English while preserving the original syntax whenever possible."
+derivation:
+  direct_sources:
+    - "Greek New Testament (Erasmus)"
+  stylistic_influence:
+    - "Luther’s German Bible"
+    - "Latin Vulgate"
+  notes: "William Tyndale undertook the translation independently; his work set the foundation for most later English Bibles."
+historical_context:
+  commission: "William Tyndale (independent translator)"
+  purpose: "To provide the common people with an English New Testament drawn from the original languages and to challenge ecclesiastical control of Scripture."
+
+
+isaiah_43_1_4:
+  esv:
+    text: "Fear not, for I have redeemed you; I have called you by name, you are mine. When you pass through the waters, I will be with you… because you are precious in my eyes, and honored, and I love you."
+  niv:
+    text: "Do not fear, for I have redeemed you; I have summoned you by name; you are mine. When you pass through the waters, I will be with you… Since you are precious and honored in my sight, and because I love you."
+  the_message:
+    text: "Don't be afraid, I've redeemed you. I've called your name. You're mine. When you're in over your head, I'll be there… That's how much you mean to me! That's how much I love you!"
+  key_message: |
+    Isaiah 43:1‑4 reassures the people that God has created, redeemed and
+    personally called them.  God promises to be with them through deep waters
+    and fire, calling them by name and declaring them precious and loved.
+  life_saving_insight: |
+    This passage speaks directly to fear and shame.  God says “You are mine” and
+    “I love you” to those who feel outcast or unworthy.  It affirms that you
+    are precious in God’s sight and that divine presence accompanies you through
+    every trial.  For queer youth, Isaiah 43 is a reminder that God’s love and
+    protection are unwavering, no matter what others say.
+
+
+jeremiah_29_11:
+  esv:
+    text: "For I know the plans I have for you, declares the LORD, plans for welfare and not for evil, to give you a future and a hope."
+  niv:
+    text: "For I know the plans I have for you," declares the LORD, "plans to prosper you and not to harm you, plans to give you hope and a future."
+  the_message:
+    text: "I know what I'm doing. I have it all planned out—plans to take care of you, not abandon you, plans to give you the future you hope for."
+  key_message: |
+    Jeremiah 29:11 conveys God’s assurance to exiles that their future is held in
+    divine hands.  The plans God has are for welfare, hope and a good future,
+    not harm.  Every translation emphasises that God intends good for those who
+    are despairing.
+  life_saving_insight: |
+    When life feels hopeless, Jeremiah 29:11 offers a promise that God’s plans
+    include hope and a future.  For queer youth struggling under rejection,
+    this passage assures them that God’s intentions are to prosper and care for
+    them—not to harm or abandon them.  There is a future and a hope beyond the
+    present pain.
+
+psalm_139_13_14:
+  esv:
+    text: "For you formed my inward parts; you knitted me together in my mother's womb. I praise you, for I am fearfully and wonderfully made."
+  niv:
+    text: "For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made."
+  the_message:
+    text: "Oh yes, you shaped me first inside, then out; you formed me in my mother's womb. I thank you, High God—you're breathtaking! Body and soul, I am marvelously made!"
+  key_message: |
+    Psalm 139 celebrates God’s intimate knowledge and creative involvement in our
+    lives.  Across translations, the psalmist affirms that each person is
+    fearfully and wonderfully made—lovingly knit together with care and purpose.
+  life_saving_insight: |
+    When queer youth or anyone else questions their worth, Psalm 139:13‑14 offers
+    a reminder that your existence is not an accident.  You are lovingly formed
+    and wonderfully made, no matter what others say about your identity or
+    orientation.  God’s craftsmanship includes you, and nothing can negate the
+    value placed on your life by the Creator.
+
+
+romans_1_26_27_plus_2_1:
+  esv:
+    romans_1_26_27:
+      text: "For this reason God gave them up to dishonorable passions. … men committing shameless acts with men and receiving in themselves the due penalty for their error."
+      key_terms:
+        natural_language: "natural relations / unnatural"
+        passion_language: "dishonorable passions"
+        shame_language: "shameless acts"
+    romans_2_1:
+      text: "Therefore you have no excuse, O man, every one of you who judges. For in passing judgment on another you condemn yourself, because you, the judge, practice the very same things."
+      therefore_rendering: "Therefore"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: "God’s Wrath on Unrighteousness"
+      section_header_before_2_1: "God’s Righteous Judgment"
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "The ESV retains chapter and section breaks that obscure the rhetorical continuity but translates Διὸ as 'Therefore,' signalling Paul’s turn from the list of vices to his rebuke of the reader."
+  niv:
+    romans_1_26_27:
+      text: "Because of this, God gave them over to shameful lusts. … Men committed shameful acts with other men, and received in themselves the due penalty for their error."
+      key_terms:
+        natural_language: "natural sexual relations / unnatural ones"
+        passion_language: "shameful lusts"
+        shame_language: "shameful acts"
+    romans_2_1:
+      text: "You, therefore, have no excuse, you who pass judgment on someone else, for at whatever point you judge another, you are condemning yourself, because you who pass judgment do the same things."
+      therefore_rendering: "You, therefore"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: "God’s Wrath Against Sinful Humanity"
+      section_header_before_2_1: "God’s Righteous Judgment"
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "The NIV’s 'You, therefore' makes the rhetorical pivot explicit and emphasises the judge’s complicity."
+  nrsv:
+    romans_1_26_27:
+      text: "For this reason God gave them up to degrading passions; … men committed shameless acts with men and received in their own persons the due penalty for their error."
+      key_terms:
+        natural_language: "natural intercourse / unnatural"
+        passion_language: "degrading passions"
+        shame_language: "shameless acts"
+    romans_2_1:
+      text: "Therefore you have no excuse, whoever you are, when you judge others; for in passing judgment on another you condemn yourself, because you, the judge, are doing the very same things."
+      therefore_rendering: "Therefore"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: "The Guilt of Humankind"
+      section_header_before_2_1: "The Righteous Judgment of God"
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "NRSV, like the ESV, keeps the break but emphasises 'whoever you are' to universalise Paul’s rebuke."
+  the_message:
+    romans_1_26_27:
+      text: "Worse followed. Refusing to know God, they soon didn’t know how to be human. Women didn’t know how to be women; men didn’t know how to be men, and then sexually confused, they abused and defiled one another, men and women alike…"
+      key_terms:
+        natural_language: "didn’t know how to be women/men"
+        passion_language: "sexually confused"
+        shame_language: "abused and defiled"
+    romans_2_1:
+      text: "Those people are on a dark spiral downward. But if you think that leaves you on the high ground where you can point your finger at others, think again. Every time you criticize someone, you condemn yourself."
+      therefore_rendering: "But if you think that leaves you…"
+    structural_elements:
+      chapter_break_between_1_and_2: true
+      section_header_after_1_32: null
+      section_header_before_2_1: null
+      paragraph_break_between_1_32_and_2_1: true
+    notes: "The Message flattens the chapter structure into a continuous narrative, making the rhetorical trap obvious by turning Paul's 'Therefore' into a clear admonition against finger‑pointing."
+  life_saving_insight: "Across translations, Romans 1:26‑27 lists behaviours that many modern readers see as condemnations of same‑sex conduct.  Yet the Greek conjunction Διὸ (“therefore”) at the start of Romans 2:1 connects that list to Paul’s larger argument.  He is ventriloquizing the judgmental voice in chapter 1 only to turn the accusation back on those who judge.  Reading Romans 1 and 2 as a unit shifts the focus from condemning others to examining our own complicity.  This perspective can be life‑giving for queer readers, reminding them that Paul's point is not that God despises them, but that God condemns judgmentalism."
+
+
+romans_8_38_39:
+  esv:
+    text: "For I am sure that neither death nor life nor anything else in all creation will be able to separate us from the love of God in Christ Jesus our Lord."
+  niv:
+    text: "For I am convinced that neither death nor life, neither the present nor the future, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord."
+  the_message:
+    text: "I'm absolutely convinced that nothing—nothing living or dead, today or tomorrow—can get between us and God's love because of the way that Jesus our Master has embraced us."
+  key_message: |
+    Romans 8:38‑39 lists every conceivable obstacle—life, death, time, powers and
+    the whole of creation—and declares that none of them can separate us from
+    God’s love.  Each translation underscores the absolute security of divine
+    love in Christ.
+  life_saving_insight: |
+    For those feeling condemned or abandoned, these verses insist that no
+    circumstance, identity or action can cut you off from God’s love.  If you
+    worry that your orientation separates you from God, Romans 8 reminds you
+    that nothing in all creation can pry you from God’s embrace.
